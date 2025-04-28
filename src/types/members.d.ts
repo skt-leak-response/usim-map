@@ -1,4 +1,5 @@
 export interface Member {
+  id: number;
   term: string;
   name: string;
   party: string;
@@ -8,6 +9,7 @@ export interface Member {
   gender: string;
   election_count: string;
   election_method: string;
+  email?: string;
 }
 
 declare module '@/data/members.json' {

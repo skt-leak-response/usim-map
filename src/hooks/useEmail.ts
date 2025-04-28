@@ -1,70 +1,70 @@
-import { useState, useCallback } from 'react';
-import { EMAIL_TEMPLATES, EMAIL_PROVIDERS } from '@/constants/email';
+'use client';
 
-interface EmailTemplate {
-  title: string;
-  content: string;
-}
-
-interface EmailProvider {
-  name: string;
-  url: string;
-}
+import { useState } from 'react';
+import { EMAIL_TEMPLATES } from '@/constants/email';
+import { Member } from '@/types/members';
 
 interface UseEmailProps {
-  selectedMembers: Array<{
-    name: string;
-    email: string;
-    city: string;
-    district: string;
-  }>;
+  selectedMembers: Member[];
 }
 
-export const useEmail = ({ selectedMembers }: UseEmailProps) => {
-  const [template, setTemplate] = useState<keyof typeof EMAIL_TEMPLATES>('DEFAULT');
+type TemplateKey = keyof typeof EMAIL_TEMPLATES;
+
+export function useEmail({ selectedMembers }: UseEmailProps) {
+  const [template, setTemplate] = useState<TemplateKey>('DEFAULT');
   const [issue, setIssue] = useState('');
   const [content, setContent] = useState('');
   const [senderName, setSenderName] = useState('');
   const [showCopyToast, setShowCopyToast] = useState(false);
+  const [currentBatch, setCurrentBatch] = useState(0);
 
-  const formatEmailContent = useCallback(() => {
-    const templateContent = EMAIL_TEMPLATES[template].content;
-    return selectedMembers
-      .map((member) =>
-        templateContent
-          .replace(/{name}/g, member.name)
-          .replace(/{city}/g, member.city)
-          .replace(/{district}/g, member.district)
-          .replace(/{issue}/g, issue)
-          .replace(/{content}/g, content)
-          .replace(/{senderName}/g, senderName),
-      )
-      .join('\n\n---\n\n');
-  }, [template, selectedMembers, issue, content, senderName]);
-
-  const getEmailUrl = useCallback(
-    (provider: keyof typeof EMAIL_PROVIDERS) => {
-      const emails = selectedMembers.map((member) => member.email).join(',');
-      const formattedContent = formatEmailContent();
-
-      return EMAIL_PROVIDERS[provider].url
-        .replace(/{to}/g, emails)
-        .replace(/{bcc}/g, '')
-        .replace(/{subject}/g, encodeURIComponent(`[시민의견] ${issue}`))
-        .replace(/{body}/g, encodeURIComponent(formattedContent));
-    },
-    [selectedMembers, issue, formatEmailContent],
+  const BATCH_SIZE = 50;
+  const totalBatches = Math.ceil(selectedMembers.length / BATCH_SIZE);
+  const currentMembers = selectedMembers.slice(
+    currentBatch * BATCH_SIZE,
+    (currentBatch + 1) * BATCH_SIZE,
   );
 
-  const copyToClipboard = useCallback(async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setShowCopyToast(true);
-      setTimeout(() => setShowCopyToast(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy text: ', err);
+  const formatEmailContent = () => {
+    const templateContent = EMAIL_TEMPLATES[template].content;
+    const displayName = senderName || '시민';
+
+    return templateContent
+      .replace('{issue}', issue)
+      .replace('{content}', content)
+      .replace('{senderName}', displayName);
+  };
+
+  const getEmailUrl = (provider: string) => {
+    const formattedContent = formatEmailContent();
+    const subject = `[${issue}] 국회의원님께`;
+    const body = formattedContent;
+
+    const emails = currentMembers.map((member) => member.email).join(',');
+
+    switch (provider) {
+      case 'gmail':
+        return `https://mail.google.com/mail/?view=cm&fs=1&to=${emails}&su=${encodeURIComponent(
+          subject,
+        )}&body=${encodeURIComponent(body)}`;
+      case 'outlook':
+        return `https://outlook.live.com/mail/0/deeplink/compose?to=${emails}&subject=${encodeURIComponent(
+          subject,
+        )}&body=${encodeURIComponent(body)}`;
+      case 'naver':
+        return `https://mail.naver.com/compose?to=${emails}&subject=${encodeURIComponent(
+          subject,
+        )}&body=${encodeURIComponent(body)}`;
+      default:
+        return '';
     }
-  }, []);
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setShowCopyToast(true);
+    setTimeout(() => setShowCopyToast(false), 2000);
+  };
 
   return {
     template,
@@ -76,8 +76,12 @@ export const useEmail = ({ selectedMembers }: UseEmailProps) => {
     senderName,
     setSenderName,
     showCopyToast,
+    currentBatch,
+    setCurrentBatch,
+    totalBatches,
+    currentMembers,
     formatEmailContent,
     getEmailUrl,
     copyToClipboard,
   };
-};
+}

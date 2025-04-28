@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import membersData from '@/data/members.json';
 
 interface Member {
+  id: number;
   term: string;
   name: string;
   party: string;
@@ -11,37 +12,27 @@ interface Member {
   gender: string;
   election_count: string;
   election_method: string;
-  email: string;
+  email?: string;
 }
+
+const decompressIds = (compressed: string): number[] => {
+  return compressed.split('_').map(Number);
+};
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const party = searchParams.get('party');
-  const committee = searchParams.get('committee');
-  const city = searchParams.get('city');
-  const district = searchParams.get('district');
+  const compressedIds = searchParams.get('ids');
 
   try {
-    let filteredMembers: Member[] = membersData;
-
-    if (party) {
-      filteredMembers = filteredMembers.filter((member) => member.party === party);
+    if (compressedIds) {
+      const ids = decompressIds(compressedIds);
+      const selectedMembers = membersData.filter((member) => ids.includes(member.id)) as Member[];
+      return NextResponse.json(selectedMembers);
+    } else {
+      return NextResponse.json(membersData as Member[]);
     }
-    if (committee) {
-      filteredMembers = filteredMembers.filter((member) =>
-        member.committees.some((c) => c === committee),
-      );
-    }
-    if (city) {
-      filteredMembers = filteredMembers.filter((member) => member.city === city);
-    }
-    if (district) {
-      filteredMembers = filteredMembers.filter((member) => member.district === district);
-    }
-
-    return NextResponse.json(filteredMembers);
   } catch (error) {
-    console.error('Error processing members:', error);
-    return NextResponse.json({ error: 'Failed to process members' }, { status: 500 });
+    console.error('Error fetching members:', error);
+    return NextResponse.json({ error: 'Failed to fetch members' }, { status: 500 });
   }
 }

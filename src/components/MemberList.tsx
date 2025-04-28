@@ -13,6 +13,14 @@ interface FilterState {
   search: string;
 }
 
+const compressIds = (ids: number[]): string => {
+  return ids.join('_');
+};
+
+const decompressIds = (compressed: string): number[] => {
+  return compressed.split('_').map(Number);
+};
+
 export default function MemberList() {
   const router = useRouter();
   const [members, setMembers] = useState<Member[]>([]);
@@ -73,9 +81,9 @@ export default function MemberList() {
 
   const handleMemberSelect = (member: Member) => {
     setSelectedMembers((prev) => {
-      const isSelected = prev.some((m) => m.name === member.name);
+      const isSelected = prev.some((m) => m.id === member.id);
       if (isSelected) {
-        return prev.filter((m) => m.name !== member.name);
+        return prev.filter((m) => m.id !== member.id);
       } else {
         return [...prev, member];
       }
@@ -84,8 +92,8 @@ export default function MemberList() {
 
   const handleNext = () => {
     if (selectedMembers.length === 0) return;
-    const membersParam = encodeURIComponent(JSON.stringify(selectedMembers));
-    router.push(`/email?members=${membersParam}`);
+    const memberIds = compressIds(selectedMembers.map((member) => member.id));
+    router.push(`/email?ids=${memberIds}`);
   };
 
   const uniqueParties = Array.from(new Set(members.map((member) => member.party)));
@@ -221,9 +229,9 @@ export default function MemberList() {
           </div>
           {filteredMembers.map((member) => (
             <div
-              key={member.name}
+              key={member.id}
               className={`p-4 rounded-lg border ${
-                selectedMembers.some((m) => m.name === member.name)
+                selectedMembers.some((m) => m.id === member.id)
                   ? 'border-blue-500 bg-blue-900/20'
                   : 'border-gray-700 bg-gray-800'
               }`}
@@ -231,7 +239,7 @@ export default function MemberList() {
               <div className="flex items-center space-x-4">
                 <input
                   type="checkbox"
-                  checked={selectedMembers.some((m) => m.name === member.name)}
+                  checked={selectedMembers.some((m) => m.id === member.id)}
                   onChange={() => handleMemberSelect(member)}
                   className="h-4 w-4 rounded border-gray-700 text-blue-600 focus:ring-blue-500"
                 />
@@ -249,7 +257,7 @@ export default function MemberList() {
                     {member.committees.map((committee, index) => (
                       <span
                         key={index}
-                        className="inline-block bg-gray-700 text-gray-300 rounded-full px-3 py-1 text-sm"
+                        className="px-2 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
                       >
                         {committee}
                       </span>

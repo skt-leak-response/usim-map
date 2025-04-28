@@ -173,17 +173,37 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
         <div className="text-center text-gray-400">No members found</div>
       ) : (
         <div className="space-y-2">
+          {totalPages > 1 && (
+            <MemberPagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
+          )}
+          <div className="text-gray-400 w-full flex justify-end px-4">
+            페이지 {currentPage} of {totalPages}
+          </div>
           <Card className="bg-gray-900 border-gray-700">
             <CardContent className="p-4">
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  checked={currentPageMembers.every((member) =>
-                    selectedMembers.some((m) => m.id === member.id),
-                  )}
-                  onCheckedChange={handleSelectAll}
-                  className="border-2 border-white bg-transparent text-white data-[state=checked]:text-white data-[state=checked]:border-white focus:ring-0"
-                />
-                <Label className="text-gray-200">전체 선택</Label>
+              <div className="flex justify-between">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    checked={currentPageMembers.every((member) =>
+                      selectedMembers.some((m) => m.id === member.id),
+                    )}
+                    onCheckedChange={handleSelectAll}
+                    className="border-2 border-white bg-transparent text-white data-[state=checked]:text-white data-[state=checked]:border-white focus:ring-0"
+                  />
+                  <Label className="text-gray-200">전체 선택</Label>
+                </div>
+
+                <Label className="flex flex-col items-end space-y-1 text-white">
+                  <div>
+                    {(currentPage - 1) * ITEMS_PER_PAGE + 1} ~
+                    {Math.min(currentPage * ITEMS_PER_PAGE, filteredMembers.length)}명 /
+                    {filteredMembers.length}명
+                  </div>
+                </Label>
               </div>
             </CardContent>
           </Card>
@@ -200,14 +220,6 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
               ))}
             </Suspense>
           </ErrorBoundary>
-
-          {totalPages > 1 && (
-            <MemberPagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          )}
         </div>
       )}
     </div>

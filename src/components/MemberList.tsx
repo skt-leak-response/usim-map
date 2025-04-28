@@ -5,12 +5,24 @@ import { useRouter } from 'next/navigation';
 import { Member } from '@/types/members';
 import { MEMBER_CONSTANTS } from '@/constants/members';
 import { encodeIds } from '@/utils/encoding';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Card, CardContent } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 
 interface FilterState {
-  party: string;
-  committees: string;
-  city: string;
-  district: string;
+  party: string | null;
+  committees: string | null;
+  city: string | null;
+  district: string | null;
   search: string;
 }
 
@@ -24,10 +36,10 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
   const [filteredMembers, setFilteredMembers] = useState<Member[]>([]);
   const [selectedMembers, setSelectedMembers] = useState<Member[]>([]);
   const [filters, setFilters] = useState<FilterState>({
-    party: '',
-    committees: '',
-    city: '',
-    district: '',
+    party: null,
+    committees: null,
+    city: null,
+    district: null,
     search: '',
   });
   const [loading, setLoading] = useState(true);
@@ -72,7 +84,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
     setFilteredMembers(result);
   }, [members, filters]);
 
-  const handleFilterChange = (key: keyof FilterState, value: string) => {
+  const handleFilterChange = (key: keyof FilterState, value: string | null) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
@@ -92,176 +104,215 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
     router.push(`/email?ids=${encodedIds}`);
   };
 
-  const uniqueParties = Array.from(new Set(members.map((member) => member.party)));
-  const uniqueCommittees = Array.from(new Set(members.flatMap((member) => member.committees)));
-  const uniqueCities = Array.from(new Set(members.map((member) => member.city)));
-  const uniqueDistricts = Array.from(new Set(members.map((member) => member.district)));
+  const uniqueParties = Array.from(new Set(members.map((member) => member.party))).filter(Boolean);
+  const uniqueCommittees = Array.from(
+    new Set(members.flatMap((member) => member.committees)),
+  ).filter(Boolean);
+  const uniqueCities = Array.from(new Set(members.map((member) => member.city))).filter(Boolean);
+  const uniqueDistricts = Array.from(new Set(members.map((member) => member.district))).filter(
+    Boolean,
+  );
 
   return (
     <div className="space-y-6">
-      {/* Search bar */}
-      <div className="mb-6">
-        <input
-          type="text"
-          placeholder={MEMBER_CONSTANTS.SEARCH.PLACEHOLDER}
-          className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          value={filters.search}
-          onChange={(e) => handleFilterChange('search', e.target.value)}
-        />
-      </div>
+      <Input
+        type="text"
+        placeholder={MEMBER_CONSTANTS.SEARCH.PLACEHOLDER}
+        value={filters.search}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          handleFilterChange('search', e.target.value)
+        }
+      />
 
-      {/* Filters */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        <select
-          className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          value={filters.party}
-          onChange={(e) => handleFilterChange('party', e.target.value)}
+        <Select
+          value={filters.party || 'none'}
+          onValueChange={(value: string) =>
+            handleFilterChange('party', value === 'none' ? null : value)
+          }
         >
-          <option value="">{MEMBER_CONSTANTS.FILTERS.PARTY.PLACEHOLDER}</option>
-          {uniqueParties.map((party) => (
-            <option key={party} value={party}>
-              {party}
-            </option>
-          ))}
-        </select>
+          <SelectTrigger>
+            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.PARTY.PLACEHOLDER} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.PARTY.PLACEHOLDER}</SelectItem>
+            {uniqueParties.length > 0 ? (
+              uniqueParties.map((party) => (
+                <SelectItem key={party} value={party}>
+                  {party}
+                </SelectItem>
+              ))
+            ) : (
+              <SelectItem value="loading" disabled>
+                로딩 중...
+              </SelectItem>
+            )}
+          </SelectContent>
+        </Select>
 
-        <select
-          className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          value={filters.committees}
-          onChange={(e) => handleFilterChange('committees', e.target.value)}
+        <Select
+          value={filters.committees || 'none'}
+          onValueChange={(value: string) =>
+            handleFilterChange('committees', value === 'none' ? null : value)
+          }
         >
-          <option value="">{MEMBER_CONSTANTS.FILTERS.COMMITTEES.PLACEHOLDER}</option>
-          {uniqueCommittees.map((committee) => (
-            <option key={committee} value={committee}>
-              {committee}
-            </option>
-          ))}
-        </select>
+          <SelectTrigger>
+            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.COMMITTEES.PLACEHOLDER} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.COMMITTEES.PLACEHOLDER}</SelectItem>
+            {uniqueCommittees.length > 0 ? (
+              uniqueCommittees.map((committee) => (
+                <SelectItem key={committee} value={committee}>
+                  {committee}
+                </SelectItem>
+              ))
+            ) : (
+              <SelectItem value="loading" disabled>
+                로딩 중...
+              </SelectItem>
+            )}
+          </SelectContent>
+        </Select>
 
-        <select
-          className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          value={filters.city}
-          onChange={(e) => handleFilterChange('city', e.target.value)}
+        <Select
+          value={filters.city || 'none'}
+          onValueChange={(value: string) =>
+            handleFilterChange('city', value === 'none' ? null : value)
+          }
         >
-          <option value="">{MEMBER_CONSTANTS.FILTERS.CITY.PLACEHOLDER}</option>
-          {uniqueCities.map((city) => (
-            <option key={city} value={city}>
-              {city}
-            </option>
-          ))}
-        </select>
+          <SelectTrigger>
+            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.CITY.PLACEHOLDER} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.CITY.PLACEHOLDER}</SelectItem>
+            {uniqueCities.length > 0 ? (
+              uniqueCities.map((city) => (
+                <SelectItem key={city} value={city}>
+                  {city}
+                </SelectItem>
+              ))
+            ) : (
+              <SelectItem value="loading" disabled>
+                로딩 중...
+              </SelectItem>
+            )}
+          </SelectContent>
+        </Select>
 
-        <select
-          className="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          value={filters.district}
-          onChange={(e) => handleFilterChange('district', e.target.value)}
+        <Select
+          value={filters.district || 'none'}
+          onValueChange={(value: string) =>
+            handleFilterChange('district', value === 'none' ? null : value)
+          }
           disabled={!filters.city}
         >
-          <option value="">{MEMBER_CONSTANTS.FILTERS.DISTRICT.PLACEHOLDER}</option>
-          {uniqueDistricts.map((district) => (
-            <option key={district} value={district}>
-              {district}
-            </option>
-          ))}
-        </select>
+          <SelectTrigger>
+            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.DISTRICT.PLACEHOLDER} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.DISTRICT.PLACEHOLDER}</SelectItem>
+            {uniqueDistricts.length > 0 ? (
+              uniqueDistricts.map((district) => (
+                <SelectItem key={district} value={district}>
+                  {district}
+                </SelectItem>
+              ))
+            ) : (
+              <SelectItem value="loading" disabled>
+                로딩 중...
+              </SelectItem>
+            )}
+          </SelectContent>
+        </Select>
       </div>
 
-      {/* Filter reset button */}
       <div className="flex justify-end">
-        <button
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        <Button
+          variant="outline"
           onClick={() => {
             setFilters({
-              party: '',
-              committees: '',
-              city: '',
-              district: '',
+              party: null,
+              committees: null,
+              city: null,
+              district: null,
               search: '',
             });
             setSelectedMembers([]);
           }}
         >
           {MEMBER_CONSTANTS.FILTERS.RESET}
-        </button>
+        </Button>
       </div>
 
-      {/* Next Button */}
       <div className="flex justify-end">
-        <button
-          onClick={handleNext}
-          disabled={selectedMembers.length === 0}
-          className={`px-4 py-2 rounded-md ${
-            selectedMembers.length === 0
-              ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-              : 'bg-blue-600 text-white hover:bg-blue-700'
-          }`}
-        >
+        <Button onClick={handleNext} disabled={selectedMembers.length === 0}>
           Next ({selectedMembers.length}명 선택됨)
-        </button>
+        </Button>
       </div>
 
-      {/* Members List */}
       {loading ? (
         <div className="text-center text-gray-400">Loading...</div>
       ) : filteredMembers.length === 0 ? (
         <div className="text-center text-gray-400">No members found</div>
       ) : (
         <div className="space-y-2">
-          {/* Select All Checkbox */}
-          <div className="flex items-center space-x-2 p-4 bg-gray-800 rounded-lg">
-            <input
-              type="checkbox"
-              checked={selectedMembers.length === filteredMembers.length}
-              onChange={() => {
-                if (selectedMembers.length === filteredMembers.length) {
-                  setSelectedMembers([]);
-                } else {
-                  setSelectedMembers(filteredMembers);
-                }
-              }}
-              className="h-4 w-4 rounded border-gray-700 text-blue-600 focus:ring-blue-500"
-            />
-            <span className="text-gray-300">전체 선택</span>
-          </div>
+          <Card>
+            <CardContent className="p-4">
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  checked={selectedMembers.length === filteredMembers.length}
+                  onCheckedChange={() => {
+                    if (selectedMembers.length === filteredMembers.length) {
+                      setSelectedMembers([]);
+                    } else {
+                      setSelectedMembers(filteredMembers);
+                    }
+                  }}
+                />
+                <Label>전체 선택</Label>
+              </div>
+            </CardContent>
+          </Card>
           {filteredMembers.map((member) => (
-            <div
+            <Card
               key={member.id}
-              className={`p-4 rounded-lg border ${
+              className={`${
                 selectedMembers.some((m) => m.id === member.id)
                   ? 'border-blue-500 bg-blue-900/20'
                   : 'border-gray-700 bg-gray-800'
               }`}
             >
-              <div className="flex items-center space-x-4">
-                <input
-                  type="checkbox"
-                  checked={selectedMembers.some((m) => m.id === member.id)}
-                  onChange={() => handleMemberClick(member)}
-                  className="h-4 w-4 rounded border-gray-700 text-blue-600 focus:ring-blue-500"
-                />
-                <div className="flex-1">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-lg font-medium text-white">{member.name}</h3>
-                      <p className="text-gray-400">{member.party}</p>
-                    </div>
-                    <span className="text-gray-400">
-                      {member.city} {member.district}
-                    </span>
-                  </div>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {member.committees.map((committee, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
-                      >
-                        {committee}
+              <CardContent className="p-4">
+                <div className="flex items-center space-x-4">
+                  <Checkbox
+                    checked={selectedMembers.some((m) => m.id === member.id)}
+                    onCheckedChange={() => handleMemberClick(member)}
+                  />
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="text-lg font-medium text-white">{member.name}</h3>
+                        <p className="text-gray-400">{member.party}</p>
+                      </div>
+                      <span className="text-gray-400">
+                        {member.city} {member.district}
                       </span>
-                    ))}
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {member.committees.map((committee, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
+                        >
+                          {committee}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       )}

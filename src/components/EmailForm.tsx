@@ -7,6 +7,12 @@ import { Copy, ChevronDown, ChevronUp } from 'lucide-react';
 import { Member } from '@/types/members';
 import { useRouter } from 'next/navigation';
 import { encodeIds } from '@/utils/encoding';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface EmailFormProps {
   selectedMembers: Member[];
@@ -49,165 +55,156 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <div className="bg-gray-800 rounded-lg shadow-lg p-6">
-          <h1 className="text-2xl font-bold text-white mb-6">이메일 작성</h1>
+        <Card>
+          <CardContent className="p-6">
+            <h1 className="text-2xl font-bold text-white mb-6">이메일 작성</h1>
 
-          {/* Recipients Section */}
-          <div className="mb-6">
-            <button
-              onClick={() => setShowRecipients(!showRecipients)}
-              className="w-full flex justify-between items-center p-4 bg-gray-700 rounded-lg text-white hover:bg-gray-600 transition-colors"
-            >
-              <span>
-                받는 사람 ({currentGroupRecipients.length}명
-                {needsBatching && ` - ${currentBatch + 1}/${totalBatches}번째 그룹`})
-              </span>
-              {showRecipients ? (
-                <ChevronUp className="h-5 w-5" />
-              ) : (
-                <ChevronDown className="h-5 w-5" />
+            <div className="space-y-6">
+              <div>
+                <Button
+                  variant="outline"
+                  className="w-full flex justify-between items-center"
+                  onClick={() => setShowRecipients(!showRecipients)}
+                >
+                  <span>
+                    받는 사람 ({currentGroupRecipients.length}명
+                    {needsBatching && ` - ${currentBatch + 1}/${totalBatches}번째 그룹`})
+                  </span>
+                  {showRecipients ? (
+                    <ChevronUp className="h-5 w-5" />
+                  ) : (
+                    <ChevronDown className="h-5 w-5" />
+                  )}
+                </Button>
+                {showRecipients && (
+                  <Card className="mt-2">
+                    <CardContent className="p-4 space-y-2 max-h-60 overflow-y-auto">
+                      {currentGroupRecipients.map((member) => (
+                        <div
+                          key={member.id}
+                          className="flex justify-between items-center text-gray-300 hover:text-white"
+                        >
+                          <span>
+                            {member.name} ({member.city} {member.district}) (BCC)
+                          </span>
+                          <span className="text-sm text-gray-400">{member.email}</span>
+                        </div>
+                      ))}
+                      <div className="flex justify-between items-center text-gray-300 hover:text-white">
+                        <span>response.skt.leak@gmail.com (BCC)</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+
+              {needsBatching && (
+                <Alert variant="destructive">
+                  <AlertDescription>
+                    안전한 이메일 전송을 위해 50명씩 나누어 보내드립니다. 현재 {currentBatch + 1}/
+                    {totalBatches}번째 그룹입니다.
+                  </AlertDescription>
+                </Alert>
               )}
-            </button>
-            {showRecipients && (
-              <div className="mt-2 p-4 bg-gray-700 rounded-lg space-y-2 max-h-60 overflow-y-auto">
-                {currentGroupRecipients.map((member) => (
-                  <div
-                    key={member.id}
-                    className="flex justify-between items-center text-gray-300 hover:text-white"
-                  >
-                    <span>
-                      {member.name} ({member.city} {member.district}) (BCC)
-                    </span>
-                    <span className="text-sm text-gray-400">{member.email}</span>
+
+              {needsBatching && (
+                <div className="flex flex-wrap gap-2">
+                  {Array.from({ length: totalBatches }).map((_, index) => (
+                    <Button
+                      key={index}
+                      variant={currentBatch === index ? 'default' : 'outline'}
+                      onClick={() => setCurrentBatch(index)}
+                    >
+                      {index + 1}번째 그룹
+                    </Button>
+                  ))}
+                </div>
+              )}
+
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="issue">제목</Label>
+                  <Input
+                    id="issue"
+                    value={issue}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIssue(e.target.value)}
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="content">내용</Label>
+                  <Textarea
+                    id="content"
+                    value={content}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                      setContent(e.target.value)
+                    }
+                    rows={6}
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="senderName">보내는 사람 이름 (선택사항)</Label>
+                  <Input
+                    id="senderName"
+                    value={senderName}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setSenderName(e.target.value)
+                    }
+                    placeholder="이름을 입력하지 않으면 '시민'으로 표시됩니다"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <Label>미리보기</Label>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => copyToClipboard(formattedContent)}
+                    >
+                      <Copy className="h-5 w-5" />
+                    </Button>
                   </div>
-                ))}
-                <div className="flex justify-between items-center text-gray-300 hover:text-white">
-                  <span>response.skt.leak@gmail.com (BCC)</span>
+                  <Card>
+                    <CardContent className="p-4 whitespace-pre-wrap">
+                      <div className="mb-4">
+                        <span className="font-semibold">제목:</span> [{issue}]
+                      </div>
+                      <div className="whitespace-pre-wrap">{formattedContent}</div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="flex flex-wrap gap-4">
+                  {Object.entries(EMAIL_PROVIDERS).map(([key, provider]) => (
+                    <Button key={key} variant="default" className="flex-1" asChild>
+                      <a
+                        href={getEmailUrl(key as keyof typeof EMAIL_PROVIDERS)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {provider.name}로 보내기
+                      </a>
+                    </Button>
+                  ))}
                 </div>
               </div>
-            )}
-          </div>
-
-          {needsBatching && (
-            <div className="mb-6 p-4 bg-yellow-900/50 rounded-lg">
-              <p className="text-yellow-200">
-                안전한 이메일 전송을 위해 50명씩 나누어 보내드립니다. 현재 {currentBatch + 1}/
-                {totalBatches}번째 그룹입니다.
-              </p>
             </div>
-          )}
+          </CardContent>
+        </Card>
 
-          {needsBatching && (
-            <div className="mb-6 flex flex-wrap gap-2">
-              {Array.from({ length: totalBatches }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentBatch(index)}
-                  className={`px-4 py-2 rounded-md ${
-                    currentBatch === index
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                  }`}
-                >
-                  {index + 1}번째 그룹
-                </button>
-              ))}
-            </div>
-          )}
+        {showCopyToast && (
+          <Alert className="fixed bottom-4 right-4">
+            <AlertDescription>복사되었습니다!</AlertDescription>
+          </Alert>
+        )}
 
-          <div className="space-y-6">
-            {/* Issue Input */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">제목</label>
-              <input
-                type="text"
-                value={issue}
-                onChange={(e) => setIssue(e.target.value)}
-                className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              />
-            </div>
-
-            {/* Content Input */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">내용</label>
-              <textarea
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                rows={6}
-                className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              />
-            </div>
-
-            {/* Sender Name Input */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                보내는 사람 이름 (선택사항)
-              </label>
-              <input
-                type="text"
-                value={senderName}
-                onChange={(e) => setSenderName(e.target.value)}
-                className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                placeholder="이름을 입력하지 않으면 '시민'으로 표시됩니다"
-              />
-            </div>
-
-            {/* Preview */}
-            <div>
-              <div className="flex justify-between items-center mb-2">
-                <label className="block text-sm font-medium text-gray-300">미리보기</label>
-                <button
-                  onClick={() => copyToClipboard(formattedContent)}
-                  className="text-gray-400 hover:text-white"
-                >
-                  <Copy className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white p-4 whitespace-pre-wrap">
-                <div className="mb-4">
-                  <span className="font-semibold">제목:</span> [{issue}]
-                </div>
-                <div className="whitespace-pre-wrap">{formattedContent}</div>
-              </div>
-            </div>
-
-            {/* Email Provider Buttons */}
-            <div className="flex flex-wrap gap-4">
-              {Object.entries(EMAIL_PROVIDERS).map(([key, provider]) => (
-                <a
-                  key={key}
-                  href={getEmailUrl(key as keyof typeof EMAIL_PROVIDERS)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-center"
-                >
-                  {provider.name}로 보내기
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="fixed bottom-8 right-8">
+          <Button onClick={handleSendEmail} disabled={selectedMembers.length === 0}>
+            선택 완료 ({selectedMembers.length}명)
+          </Button>
         </div>
-      </div>
-
-      {/* Copy Toast */}
-      {showCopyToast && (
-        <div className="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg">
-          복사되었습니다!
-        </div>
-      )}
-
-      <div className="fixed bottom-8 right-8">
-        <button
-          onClick={handleSendEmail}
-          disabled={selectedMembers.length === 0}
-          className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-            selectedMembers.length === 0
-              ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-              : 'bg-blue-600 text-white hover:bg-blue-700'
-          }`}
-        >
-          선택 완료 ({selectedMembers.length}명)
-        </button>
       </div>
     </div>
   );

@@ -122,6 +122,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           handleFilterChange('search', e.target.value)
         }
+        className="bg-gray-900 border-white text-gray-100 placeholder:text-gray-500 border-2 focus:border-white focus:ring-0"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -131,19 +132,24 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
             handleFilterChange('party', value === 'none' ? null : value)
           }
         >
-          <SelectTrigger>
-            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.PARTY.PLACEHOLDER} />
+          <SelectTrigger className="bg-gray-900 border-white text-gray-100 border-2 focus:border-white focus:ring-0">
+            <SelectValue
+              placeholder={MEMBER_CONSTANTS.FILTERS.PARTY.PLACEHOLDER}
+              className="text-gray-300"
+            />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.PARTY.PLACEHOLDER}</SelectItem>
+          <SelectContent className="bg-gray-900 border-gray-700 text-gray-100">
+            <SelectItem value="none" className="text-gray-400">
+              {MEMBER_CONSTANTS.FILTERS.PARTY.PLACEHOLDER}
+            </SelectItem>
             {uniqueParties.length > 0 ? (
               uniqueParties.map((party) => (
-                <SelectItem key={party} value={party}>
+                <SelectItem key={party} value={party} className="text-gray-100 hover:bg-gray-800">
                   {party}
                 </SelectItem>
               ))
             ) : (
-              <SelectItem value="loading" disabled>
+              <SelectItem value="loading" disabled className="text-gray-500">
                 로딩 중...
               </SelectItem>
             )}
@@ -156,19 +162,28 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
             handleFilterChange('committees', value === 'none' ? null : value)
           }
         >
-          <SelectTrigger>
-            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.COMMITTEES.PLACEHOLDER} />
+          <SelectTrigger className="bg-gray-900 border-white text-gray-100 border-2 focus:border-white focus:ring-0">
+            <SelectValue
+              placeholder={MEMBER_CONSTANTS.FILTERS.COMMITTEES.PLACEHOLDER}
+              className="text-gray-300"
+            />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.COMMITTEES.PLACEHOLDER}</SelectItem>
+          <SelectContent className="bg-gray-900 border-gray-700 text-gray-100">
+            <SelectItem value="none" className="text-gray-400">
+              {MEMBER_CONSTANTS.FILTERS.COMMITTEES.PLACEHOLDER}
+            </SelectItem>
             {uniqueCommittees.length > 0 ? (
               uniqueCommittees.map((committee) => (
-                <SelectItem key={committee} value={committee}>
+                <SelectItem
+                  key={committee}
+                  value={committee}
+                  className="text-gray-100 hover:bg-gray-800"
+                >
                   {committee}
                 </SelectItem>
               ))
             ) : (
-              <SelectItem value="loading" disabled>
+              <SelectItem value="loading" disabled className="text-gray-500">
                 로딩 중...
               </SelectItem>
             )}
@@ -181,19 +196,24 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
             handleFilterChange('city', value === 'none' ? null : value)
           }
         >
-          <SelectTrigger>
-            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.CITY.PLACEHOLDER} />
+          <SelectTrigger className="bg-gray-900 border-white text-gray-100 border-2 focus:border-white focus:ring-0">
+            <SelectValue
+              placeholder={MEMBER_CONSTANTS.FILTERS.CITY.PLACEHOLDER}
+              className="text-gray-300"
+            />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.CITY.PLACEHOLDER}</SelectItem>
+          <SelectContent className="bg-gray-900 border-gray-700 text-gray-100">
+            <SelectItem value="none" className="text-gray-400">
+              {MEMBER_CONSTANTS.FILTERS.CITY.PLACEHOLDER}
+            </SelectItem>
             {uniqueCities.length > 0 ? (
               uniqueCities.map((city) => (
-                <SelectItem key={city} value={city}>
+                <SelectItem key={city} value={city} className="text-gray-100 hover:bg-gray-800">
                   {city}
                 </SelectItem>
               ))
             ) : (
-              <SelectItem value="loading" disabled>
+              <SelectItem value="loading" disabled className="text-gray-500">
                 로딩 중...
               </SelectItem>
             )}
@@ -207,19 +227,28 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
           }
           disabled={!filters.city}
         >
-          <SelectTrigger>
-            <SelectValue placeholder={MEMBER_CONSTANTS.FILTERS.DISTRICT.PLACEHOLDER} />
+          <SelectTrigger className="bg-gray-900 border-white text-gray-100 border-2 focus:border-white focus:ring-0 disabled:opacity-60">
+            <SelectValue
+              placeholder={MEMBER_CONSTANTS.FILTERS.DISTRICT.PLACEHOLDER}
+              className="text-gray-300"
+            />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="none">{MEMBER_CONSTANTS.FILTERS.DISTRICT.PLACEHOLDER}</SelectItem>
+          <SelectContent className="bg-gray-900 border-gray-700 text-gray-100">
+            <SelectItem value="none" className="text-gray-400">
+              {MEMBER_CONSTANTS.FILTERS.DISTRICT.PLACEHOLDER}
+            </SelectItem>
             {uniqueDistricts.length > 0 ? (
               uniqueDistricts.map((district) => (
-                <SelectItem key={district} value={district}>
+                <SelectItem
+                  key={district}
+                  value={district}
+                  className="text-gray-100 hover:bg-gray-800"
+                >
                   {district}
                 </SelectItem>
               ))
             ) : (
-              <SelectItem value="loading" disabled>
+              <SelectItem value="loading" disabled className="text-gray-500">
                 로딩 중...
               </SelectItem>
             )}
@@ -229,7 +258,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
 
       <div className="flex justify-end">
         <Button
-          variant="outline"
+          className="bg-gray-800 text-white shadow-none border-0 hover:bg-gray-800 hover:text-white"
           onClick={() => {
             setFilters({
               party: null,
@@ -246,7 +275,11 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
       </div>
 
       <div className="flex justify-end">
-        <Button onClick={handleNext} disabled={selectedMembers.length === 0}>
+        <Button
+          onClick={handleNext}
+          disabled={selectedMembers.length === 0}
+          className="bg-gradient-to-r from-fuchsia-600 to-blue-500 text-white hover:from-fuchsia-500 hover:to-blue-400 disabled:bg-gray-700 disabled:text-gray-400 border-0 shadow-lg"
+        >
           Next ({selectedMembers.length}명 선택됨)
         </Button>
       </div>
@@ -257,7 +290,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
         <div className="text-center text-gray-400">No members found</div>
       ) : (
         <div className="space-y-2">
-          <Card>
+          <Card className="bg-gray-900 border-gray-700">
             <CardContent className="p-4">
               <div className="flex items-center space-x-2">
                 <Checkbox
@@ -269,15 +302,16 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                       setSelectedMembers(filteredMembers);
                     }
                   }}
+                  className="border-2 border-white bg-transparent text-white data-[state=checked]:text-white data-[state=checked]:border-white focus:ring-0"
                 />
-                <Label>전체 선택</Label>
+                <Label className="text-gray-200">전체 선택</Label>
               </div>
             </CardContent>
           </Card>
           {filteredMembers.map((member) => (
             <Card
               key={member.id}
-              className={`${
+              className={`$ {
                 selectedMembers.some((m) => m.id === member.id)
                   ? 'border-blue-500 bg-blue-900/20'
                   : 'border-gray-700 bg-gray-800'
@@ -288,6 +322,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                   <Checkbox
                     checked={selectedMembers.some((m) => m.id === member.id)}
                     onCheckedChange={() => handleMemberClick(member)}
+                    className="border-2 border-white bg-transparent text-white data-[state=checked]:text-white data-[state=checked]:border-white focus:ring-0"
                   />
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
@@ -303,7 +338,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                       {member.committees.map((committee, index) => (
                         <span
                           key={index}
-                          className="px-2 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
+                          className="px-2 py-1 bg-gray-700 text-gray-200 rounded-full text-sm"
                         >
                           {committee}
                         </span>

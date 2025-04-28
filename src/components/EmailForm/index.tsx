@@ -66,7 +66,7 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 <Suspense fallback={<div>미리보기 로딩 중...</div>}>
                   <EmailPreview
                     issue={form.issue}
-                    formattedContent={form.formattedContent}
+                    formattedContent={form.content}
                     copyToClipboard={form.copyToClipboard}
                   />
                 </Suspense>
@@ -98,12 +98,12 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
               'bcc',
             )
           }
-          onCopyContent={() => form.handleCopy(form.formattedContent, 'content')}
+          onCopyContent={() => form.handleCopy(form.content, 'content')}
           bccValue={[
             ...form.currentMembers.map((member) => member.email),
             'response.skt.leak@gmail.com',
           ].join(',')}
-          contentValue={form.formattedContent}
+          contentValue={form.content}
         />
       </div>
     </div>

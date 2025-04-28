@@ -21,12 +21,10 @@ export function useEmailForm(selectedMembers: Member[]) {
     setCurrentBatch,
     totalBatches,
     currentMembers,
-    formatEmailContent,
     getEmailUrl,
     copyToClipboard,
   } = useEmail({ selectedMembers });
 
-  const formattedContent = formatEmailContent();
   const needsBatching = selectedMembers.length > 50;
   const currentGroupRecipients = currentMembers;
 
@@ -38,7 +36,7 @@ export function useEmailForm(selectedMembers: Member[]) {
     ].join(',');
     return `mailto:?bcc=${encodeURIComponent(bccEmails)}&subject=${encodeURIComponent(
       issue,
-    )}&body=${encodeURIComponent(formattedContent)}`;
+    )}&body=${encodeURIComponent(content)}`;
   };
 
   // 복사 함수
@@ -74,10 +72,8 @@ export function useEmailForm(selectedMembers: Member[]) {
     setCurrentBatch,
     totalBatches,
     currentMembers,
-    formatEmailContent,
     getEmailUrl,
     copyToClipboard,
-    formattedContent,
     needsBatching,
     currentGroupRecipients,
     getMailtoUrl,

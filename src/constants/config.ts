@@ -2,8 +2,8 @@
 export const SiteConfig = {
   url: 'https://nahee-park.github.io',
   pathPrefix: '/',
-  title: 'YOUR_SITE_TITLE',
-  subtitle: 'YOUR_SITE_SUBTITLE',
+  title: 'SKT 개인정보 유출 사건 국민행동',
+  subtitle: '국회의원들에게 항의 메일을 보내는 플랫폼',
   copyright: 'Nahee-Park © All rights reserved.',
   googleAnalyticsId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
   author: {

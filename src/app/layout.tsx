@@ -1,10 +1,13 @@
 import '@/styles/tailwind.css';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 
 import { SiteConfig } from '@/constants/config';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: SiteConfig.title,
@@ -42,7 +45,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <html lang="kr" suppressHydrationWarning>
-        <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
+        <body className={inter.className}>
           {children}
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${SiteConfig.googleAnalyticsId}`}

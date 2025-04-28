@@ -157,7 +157,6 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 <div>
                   <Label htmlFor="intro">보내는 사람 이름 (선택사항)</Label>
                   <Input
-                    id="intro"
                     placeholder="예) 의원님 소속구에 거주하는 20대 여성 000입니다."
                     value={intro}
                     onChange={(e) => setIntro(e.target.value)}
@@ -167,7 +166,6 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 <div>
                   <Label htmlFor="userReq">요청사항</Label>
                   <Textarea
-                    id="userReq"
                     rows={3}
                     placeholder="예) 빠른 조사 및 대응을 요청드립니다."
                     value={userReq}
@@ -204,7 +202,7 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                             제목
                           </Label>
                           <Input
-                            id="issuePreview"
+                            id="issue"
                             value={issue}
                             onChange={(e) => setIssue(e.target.value)}
                             className="flex-1 border-none focus:border-none"
@@ -213,7 +211,7 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                         </div>
                       </div>
                       <Textarea
-                        id="contentPreview"
+                        id="content"
                         rows={6}
                         value={content}
                         onChange={(e) => setContent(e.target.value)}

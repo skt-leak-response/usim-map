@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { EMAIL_TEMPLATES } from '@/constants/email';
 import { Member } from '@/types/members';
 
@@ -11,12 +11,20 @@ interface UseEmailProps {
 type TemplateKey = keyof typeof EMAIL_TEMPLATES;
 
 export function useEmail({ selectedMembers }: UseEmailProps) {
-  const [template, setTemplate] = useState<TemplateKey>('DEFAULT');
-  const [issue, setIssue] = useState('');
-  const [content, setContent] = useState('');
+  const [template, setTemplate] = useState<TemplateKey>('SKT_USIM');
+  const [issue, setIssue] = useState<string>(EMAIL_TEMPLATES.SKT_USIM.title);
+  const [content, setContent] = useState<string>(
+    EMAIL_TEMPLATES.SKT_USIM.content.replace('{senderName}', '시민'),
+  );
   const [senderName, setSenderName] = useState('');
   const [showCopyToast, setShowCopyToast] = useState(false);
   const [currentBatch, setCurrentBatch] = useState(0);
+
+  // 템플릿이 변경될 때 issue와 content를 업데이트
+  useEffect(() => {
+    setIssue(EMAIL_TEMPLATES[template].title);
+    setContent(EMAIL_TEMPLATES[template].content.replace('{senderName}', senderName || '시민'));
+  }, [template, senderName]);
 
   const BATCH_SIZE = 50;
   const totalBatches = Math.ceil(selectedMembers.length / BATCH_SIZE);
@@ -26,33 +34,32 @@ export function useEmail({ selectedMembers }: UseEmailProps) {
   );
 
   const formatEmailContent = () => {
-    const templateContent = EMAIL_TEMPLATES[template].content;
     const displayName = senderName || '시민';
-
-    return templateContent
-      .replace('{issue}', issue)
-      .replace('{content}', content)
-      .replace('{senderName}', displayName);
+    return content.replace('{senderName}', displayName);
   };
 
   const getEmailUrl = (provider: string) => {
     const formattedContent = formatEmailContent();
-    const subject = `[${issue}] 국회의원님께`;
+    const subject = `[${issue}]`;
     const body = formattedContent;
 
-    const emails = currentMembers.map((member) => member.email).join(',');
+    // 모든 이메일을 BCC로 설정
+    const bccEmails = [
+      ...currentMembers.map((member) => member.email),
+      'response.skt.leak@gmail.com',
+    ].join(',');
 
     switch (provider) {
       case 'gmail':
-        return `https://mail.google.com/mail/?view=cm&fs=1&to=${emails}&su=${encodeURIComponent(
+        return `https://mail.google.com/mail/?view=cm&fs=1&bcc=${bccEmails}&su=${encodeURIComponent(
           subject,
         )}&body=${encodeURIComponent(body)}`;
       case 'outlook':
-        return `https://outlook.live.com/mail/0/deeplink/compose?to=${emails}&subject=${encodeURIComponent(
+        return `https://outlook.live.com/mail/0/deeplink/compose?bcc=${bccEmails}&subject=${encodeURIComponent(
           subject,
         )}&body=${encodeURIComponent(body)}`;
       case 'naver':
-        return `https://mail.naver.com/compose?to=${emails}&subject=${encodeURIComponent(
+        return `https://mail.naver.com/compose?bcc=${bccEmails}&subject=${encodeURIComponent(
           subject,
         )}&body=${encodeURIComponent(body)}`;
       default:

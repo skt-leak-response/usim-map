@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useEmail } from '@/hooks/useEmail';
-import { EMAIL_TEMPLATES, EMAIL_PROVIDERS } from '@/constants/email';
+import { EMAIL_PROVIDERS } from '@/constants/email';
 import { Copy, ChevronDown, ChevronUp } from 'lucide-react';
 import { Member } from '@/types/members';
 
@@ -13,8 +13,6 @@ interface EmailFormProps {
 export default function EmailForm({ selectedMembers }: EmailFormProps) {
   const [showRecipients, setShowRecipients] = useState(false);
   const {
-    template,
-    setTemplate,
     issue,
     setIssue,
     content,
@@ -66,11 +64,14 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                     className="flex justify-between items-center text-gray-300 hover:text-white"
                   >
                     <span>
-                      {member.name} ({member.city} {member.district})
+                      {member.name} ({member.city} {member.district}) (BCC)
                     </span>
                     <span className="text-sm text-gray-400">{member.email}</span>
                   </div>
                 ))}
+                <div className="flex justify-between items-center text-gray-300 hover:text-white">
+                  <span>response.skt.leak@gmail.com (BCC)</span>
+                </div>
               </div>
             )}
           </div>
@@ -103,31 +104,14 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
           )}
 
           <div className="space-y-6">
-            {/* Template Selection */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">템플릿 선택</label>
-              <select
-                value={template}
-                onChange={(e) => setTemplate(e.target.value as keyof typeof EMAIL_TEMPLATES)}
-                className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              >
-                {Object.entries(EMAIL_TEMPLATES).map(([key, value]) => (
-                  <option key={key} value={key}>
-                    {value.title}
-                  </option>
-                ))}
-              </select>
-            </div>
-
             {/* Issue Input */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">주제</label>
+              <label className="block text-sm font-medium text-gray-300 mb-2">제목</label>
               <input
                 type="text"
                 value={issue}
                 onChange={(e) => setIssue(e.target.value)}
                 className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                placeholder="예: 환경 오염, 교육 정책 등"
               />
             </div>
 
@@ -139,7 +123,6 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 onChange={(e) => setContent(e.target.value)}
                 rows={6}
                 className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                placeholder="상세 내용을 입력하세요"
               />
             </div>
 
@@ -169,7 +152,10 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 </button>
               </div>
               <div className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white p-4 whitespace-pre-wrap">
-                {formattedContent}
+                <div className="mb-4">
+                  <span className="font-semibold">제목:</span> [{issue}]
+                </div>
+                <div className="whitespace-pre-wrap">{formattedContent}</div>
               </div>
             </div>
 

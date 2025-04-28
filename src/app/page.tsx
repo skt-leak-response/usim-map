@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { Member } from '@/types/members';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import MemberList from '@/components/MemberList';
-import EmailForm from '@/components/EmailForm';
+import MemberList from '@/components/MemberList/index';
 
 export default function Home() {
   const [selectedMembers, setSelectedMembers] = useState<Member[]>([]);

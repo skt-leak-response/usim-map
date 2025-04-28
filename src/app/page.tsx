@@ -20,7 +20,6 @@ export default function Home() {
         </div>
 
         <MemberList onSelectionChange={setSelectedMembers} />
-        <EmailForm selectedMembers={selectedMembers} />
       </main>
       <Footer />
     </div>

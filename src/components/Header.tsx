@@ -9,11 +9,9 @@ export default function Header() {
     <header className="bg-gray-800 border-b border-gray-700">
       <Container>
         <div className="flex justify-between h-16 items-center">
-          <Button variant="ghost" asChild>
-            <Link href="/" className="text-white text-xl font-bold">
-              국회의원 메일 보내기
-            </Link>
-          </Button>
+          <Link href="/" className="text-white text-xl font-bold">
+            국회의원 메일 보내기
+          </Link>
         </div>
       </Container>
     </header>

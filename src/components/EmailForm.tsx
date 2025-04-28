@@ -82,16 +82,16 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                       {currentGroupRecipients.map((member) => (
                         <div
                           key={member.id}
-                          className="flex justify-between items-center text-gray-300 hover:text-white"
+                          className="flex justify-between items-center text-gray-900 hover:text-black"
                         >
                           <span>
                             {member.name} ({member.city} {member.district}) (BCC)
                           </span>
-                          <span className="text-sm text-gray-400">{member.email}</span>
+                          <span className="text-sm text-gray-700">{member.email}</span>
                         </div>
                       ))}
-                      <div className="flex justify-between items-center text-gray-300 hover:text-white">
-                        <span>response.skt.leak@gmail.com (BCC)</span>
+                      <div className="flex justify-between items-center text-gray-900 hover:text-black">
+                        <span className="text-gray-900">response.skt.leak@gmail.com (BCC)</span>
                       </div>
                     </CardContent>
                   </Card>
@@ -200,11 +200,11 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
           </Alert>
         )}
 
-        <div className="fixed bottom-8 right-8">
+        {/* <div className="fixed bottom-8 right-8">
           <Button onClick={handleSendEmail} disabled={selectedMembers.length === 0}>
             선택 완료 ({selectedMembers.length}명)
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

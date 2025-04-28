@@ -144,7 +144,11 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
             </SelectItem>
             {uniqueParties.length > 0 ? (
               uniqueParties.map((party) => (
-                <SelectItem key={party} value={party} className="text-gray-100 hover:bg-gray-800">
+                <SelectItem
+                  key={party}
+                  value={party}
+                  className="text-gray-100 hover:bg-gray-800 focus:text-gray-900 hover:text-gray-900"
+                >
                   {party}
                 </SelectItem>
               ))
@@ -177,7 +181,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                 <SelectItem
                   key={committee}
                   value={committee}
-                  className="text-gray-100 hover:bg-gray-800"
+                  className="text-gray-100 hover:bg-gray-800 focus:text-gray-900 hover:text-gray-900"
                 >
                   {committee}
                 </SelectItem>
@@ -208,7 +212,11 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
             </SelectItem>
             {uniqueCities.length > 0 ? (
               uniqueCities.map((city) => (
-                <SelectItem key={city} value={city} className="text-gray-100 hover:bg-gray-800">
+                <SelectItem
+                  key={city}
+                  value={city}
+                  className="text-gray-100 hover:bg-gray-800 focus:text-gray-900 hover:text-gray-900"
+                >
                   {city}
                 </SelectItem>
               ))
@@ -242,7 +250,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                 <SelectItem
                   key={district}
                   value={district}
-                  className="text-gray-100 hover:bg-gray-800"
+                  className="text-gray-100 hover:bg-gray-800 focus:text-gray-900 hover:text-gray-900"
                 >
                   {district}
                 </SelectItem>

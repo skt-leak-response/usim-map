@@ -1,4 +1,3 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { EMAIL_TEMPLATES } from '@/constants/email';
 import OpenAI from 'openai';
 import { NextResponse } from 'next/server';
@@ -9,15 +8,8 @@ const openai = new OpenAI({
 
 type TemplateKey = keyof typeof EMAIL_TEMPLATES;
 
-interface GenerateEmailRequest {
-  templateKey: TemplateKey;
-  introduction: string;
-  userRequest: string;
-}
-
 export async function POST(request: Request) {
   try {
-    // request.body(JSON)에서 값 추출
     const { templateKey, introduction, userRequest } = (await request.json()) as {
       templateKey: TemplateKey;
       introduction: string;

@@ -25,7 +25,12 @@ export function useEmail({ selectedMembers }: UseEmailProps) {
   // 템플릿이 변경될 때 issue와 content를 업데이트
   useEffect(() => {
     setIssue(EMAIL_TEMPLATES[template].title);
-    setContent('');
+    const baseContent = `${EMAIL_TEMPLATES[template].description}
+
+${EMAIL_TEMPLATES[template].solution}
+
+${EMAIL_TEMPLATES[template].finish}`;
+    setContent(baseContent);
   }, [template, senderName]);
 
   const BATCH_SIZE = 50;

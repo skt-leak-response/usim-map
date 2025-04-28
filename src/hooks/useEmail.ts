@@ -8,7 +8,7 @@ interface UseEmailProps {
   selectedMembers: Member[];
 }
 
-type TemplateKey = keyof typeof EMAIL_TEMPLATES;
+export type TemplateKey = keyof typeof EMAIL_TEMPLATES;
 
 export function useEmail({ selectedMembers }: UseEmailProps) {
   const [template, setTemplate] = useState<TemplateKey>('SKT_USIM');

@@ -1,8 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useEmail } from '@/hooks/useEmail';
-import { EMAIL_PROVIDERS } from '@/constants/email';
+import { type TemplateKey, useEmail } from '@/hooks/useEmail';
+import { EMAIL_PROVIDERS, EMAIL_TEMPLATES } from '@/constants/email';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 import { Copy, ChevronDown, ChevronUp } from 'lucide-react';
 import { Member } from '@/types/members';
 import { useRouter } from 'next/navigation';
@@ -21,6 +28,8 @@ interface EmailFormProps {
 export default function EmailForm({ selectedMembers }: EmailFormProps) {
   const [showRecipients, setShowRecipients] = useState(false);
   const {
+    template,
+    setTemplate,
     issue,
     setIssue,
     content,
@@ -124,11 +133,21 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
               <div className="space-y-4">
                 <div>
                   <Label htmlFor="issue">제목</Label>
-                  <Input
-                    id="issue"
-                    value={issue}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIssue(e.target.value)}
-                  />
+                  <Select
+                    value={template}
+                    onValueChange={(value) => setTemplate(value as TemplateKey)}
+                  >
+                    <SelectTrigger className="w-full ">
+                      <SelectValue placeholder="템플릿을 선택하세요" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {Object.entries(EMAIL_TEMPLATES).map(([key, { title }]) => (
+                        <SelectItem key={key} value={key}>
+                          {title}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div>

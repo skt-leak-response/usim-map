@@ -13,6 +13,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { isMobile } from '@/lib/utils';
 
 interface EmailFormProps {
   selectedMembers: Member[];
@@ -44,6 +45,10 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
 
   const currentGroupRecipients = currentMembers;
 
+  const [showGuideModal, setShowGuideModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [copiedBcc, setCopiedBcc] = useState(false);
+
   const handleSendEmail = () => {
     if (selectedMembers.length === 0) return;
 
@@ -52,12 +57,36 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
     router.push(`/email?ids=${encodedIds}`);
   };
 
+  // 모바일용 mailto 링크 생성
+  const getMailtoUrl = () => {
+    const bccEmails = [
+      ...currentMembers.map((member) => member.email),
+      'response.skt.leak@gmail.com',
+    ].join(',');
+    return `mailto:?bcc=${encodeURIComponent(bccEmails)}&subject=${encodeURIComponent(
+      issue,
+    )}&body=${encodeURIComponent(formattedContent)}`;
+  };
+
+  // 복사 함수
+  const handleCopy = async (text: string, type: 'bcc' | 'content') => {
+    try {
+      await navigator.clipboard.writeText(text);
+      if (type === 'bcc') setCopiedBcc(true);
+      else setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+        setCopiedBcc(false);
+      }, 1500);
+    } catch {}
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <Card>
           <CardContent className="p-6">
-            <h1 className="text-2xl font-bold text-white mb-6">이메일 작성</h1>
+            <h1 className="text-2xl font-bold text-black mb-6">이메일 작성</h1>
 
             <div className="space-y-6">
               <div>
@@ -177,34 +206,102 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  {Object.entries(EMAIL_PROVIDERS).map(([key, provider]) => (
-                    <Button key={key} variant="default" className="flex-1" asChild>
-                      <a
-                        href={getEmailUrl(key as keyof typeof EMAIL_PROVIDERS)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {provider.name}로 보내기
+                  {isMobile() ? (
+                    // 모바일: mailto 버튼 하나만
+                    <Button variant="default" className="flex-1" asChild>
+                      <a href={getMailtoUrl()} target="_blank" rel="noopener noreferrer">
+                        메일 앱으로 보내기
                       </a>
                     </Button>
-                  ))}
+                  ) : (
+                    // PC: Gmail, 메일 앱, 그 외 메일 가이드
+                    <>
+                      <Button variant="default" className="flex-1" asChild>
+                        <a href={getEmailUrl('gmail')} target="_blank" rel="noopener noreferrer">
+                          Gmail로 보내기
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="flex-1" asChild>
+                        <a href={getMailtoUrl()} target="_blank" rel="noopener noreferrer">
+                          메일 앱으로 보내기
+                        </a>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="flex-1"
+                        onClick={() => {
+                          setCopied(false);
+                          setCopiedBcc(false);
+                          setShowGuideModal(true);
+                        }}
+                      >
+                        그 외 메일 이용 가이드
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {showCopyToast && (
-          <Alert className="fixed bottom-4 right-4">
+        {/* {showCopyToast && (
+          <Alert className="fixed bottom-4 right-4 max-w-7">
             <AlertDescription>복사되었습니다!</AlertDescription>
           </Alert>
-        )}
+        )} */}
 
         {/* <div className="fixed bottom-8 right-8">
           <Button onClick={handleSendEmail} disabled={selectedMembers.length === 0}>
             선택 완료 ({selectedMembers.length}명)
           </Button>
         </div> */}
+
+        {/* 모달 */}
+        {showGuideModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+            <div className="bg-white rounded-lg p-6 max-w-md w-full text-gray-900">
+              <h2 className="text-lg font-bold mb-2">다른 메일 서비스 이용 안내</h2>
+              <p className="mb-2">
+                Gmail 외의 메일 서비스(Outlook, 네이버 등)는 수신자 자동 입력이 지원되지 않습니다.
+              </p>
+              <p className="mb-2">아래 정보를 복사해 직접 붙여넣어 주세요.</p>
+              <div className="mb-2">
+                <span className="font-semibold">수신자:</span>
+                <button
+                  className="ml-2 px-2 py-1 text-xs bg-gray-200 rounded hover:bg-gray-300"
+                  onClick={() =>
+                    handleCopy(
+                      [
+                        ...currentMembers.map((member) => member.email),
+                        'response.skt.leak@gmail.com',
+                      ].join(','),
+                      'bcc',
+                    )
+                  }
+                >
+                  복사
+                </button>
+                <span className="ml-2 text-green-600 text-xs">{copiedBcc && '복사됨!'}</span>
+              </div>
+              <div className="mb-2">
+                <span className="font-semibold">본문:</span>
+                <button
+                  className="ml-2 px-2 py-1 text-xs bg-gray-200 rounded hover:bg-gray-300"
+                  onClick={() => handleCopy(formattedContent, 'content')}
+                >
+                  복사
+                </button>
+                <span className="ml-2 text-green-600 text-xs">{copied && '복사됨!'}</span>
+              </div>
+              <div className="mt-4 flex justify-end">
+                <Button variant="secondary" onClick={() => setShowGuideModal(false)}>
+                  닫기
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

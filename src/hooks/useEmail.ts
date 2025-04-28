@@ -8,22 +8,29 @@ interface UseEmailProps {
   selectedMembers: Member[];
 }
 
-type TemplateKey = keyof typeof EMAIL_TEMPLATES;
+export type TemplateKey = keyof typeof EMAIL_TEMPLATES;
 
 export function useEmail({ selectedMembers }: UseEmailProps) {
   const [template, setTemplate] = useState<TemplateKey>('SKT_USIM');
   const [issue, setIssue] = useState<string>(EMAIL_TEMPLATES.SKT_USIM.title);
-  const [content, setContent] = useState<string>(
-    EMAIL_TEMPLATES.SKT_USIM.content.replace('{senderName}', '시민'),
-  );
+  const [content, setContent] = useState<string>('');
   const [senderName, setSenderName] = useState('');
   const [showCopyToast, setShowCopyToast] = useState(false);
   const [currentBatch, setCurrentBatch] = useState(0);
 
+  const [intro, setIntro] = useState('');
+  const [userReq, setUserReq] = useState('');
+  const [loadingAI, setLoadingAI] = useState(false);
+
   // 템플릿이 변경될 때 issue와 content를 업데이트
   useEffect(() => {
     setIssue(EMAIL_TEMPLATES[template].title);
-    setContent(EMAIL_TEMPLATES[template].content.replace('{senderName}', senderName || '시민'));
+    const baseContent = `${EMAIL_TEMPLATES[template].description}
+
+${EMAIL_TEMPLATES[template].solution}
+
+${EMAIL_TEMPLATES[template].finish}`;
+    setContent(baseContent);
   }, [template, senderName]);
 
   const BATCH_SIZE = 50;
@@ -33,15 +40,33 @@ export function useEmail({ selectedMembers }: UseEmailProps) {
     (currentBatch + 1) * BATCH_SIZE,
   );
 
-  const formatEmailContent = () => {
-    const displayName = senderName || '시민';
-    return content.replace('{senderName}', displayName);
+  const generateEmail = async () => {
+    setLoadingAI(true);
+    try {
+      const res = await fetch('/api/generateEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          templateKey: template,
+          introduction: intro,
+          userRequest: userReq,
+        }),
+      });
+      const { email } = await res.json();
+      if (email) {
+        const lines = email.split('\n').filter((l: string) => l.trim() !== '');
+        setContent(lines.join('\n\n').trim());
+      }
+    } catch (err) {
+      console.error(err);
+      alert('메일 생성에 실패했습니다.');
+    } finally {
+      setLoadingAI(false);
+    }
   };
-
   const getEmailUrl = (provider: string) => {
-    const formattedContent = formatEmailContent();
     const subject = `[${issue}]`;
-    const body = formattedContent;
+    const body = content;
 
     // 모든 이메일을 BCC로 설정
     const bccEmails = [
@@ -82,12 +107,17 @@ export function useEmail({ selectedMembers }: UseEmailProps) {
     setContent,
     senderName,
     setSenderName,
+    intro,
+    setIntro,
+    userReq,
+    setUserReq,
+    loadingAI,
+    generateEmail,
     showCopyToast,
     currentBatch,
     setCurrentBatch,
     totalBatches,
     currentMembers,
-    formatEmailContent,
     getEmailUrl,
     copyToClipboard,
   };

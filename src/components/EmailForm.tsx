@@ -10,7 +10,7 @@ import {
   SelectContent,
   SelectItem,
 } from '@/components/ui/select';
-import { Copy, ChevronDown, ChevronUp } from 'lucide-react';
+import { Copy, ChevronDown, ChevronUp, Loader2 } from 'lucide-react';
 import { Member } from '@/types/members';
 import { useRouter } from 'next/navigation';
 import { encodeIds } from '@/utils/encoding';
@@ -36,19 +36,23 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
     setContent,
     senderName,
     setSenderName,
+    intro,
+    setIntro,
+    userReq,
+    setUserReq,
+    loadingAI,
+    generateEmail,
     showCopyToast,
     currentBatch,
     setCurrentBatch,
     totalBatches,
     currentMembers,
-    formatEmailContent,
     getEmailUrl,
     copyToClipboard,
   } = useEmail({ selectedMembers });
 
   const router = useRouter();
 
-  const formattedContent = formatEmailContent();
   const needsBatching = selectedMembers.length > 50;
 
   const currentGroupRecipients = currentMembers;
@@ -151,37 +155,44 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 </div>
 
                 <div>
-                  <Label htmlFor="content">내용</Label>
-                  <Textarea
-                    id="content"
-                    value={content}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                      setContent(e.target.value)
-                    }
-                    rows={6}
+                  <Label htmlFor="intro">보내는 사람 이름 (선택사항)</Label>
+                  <Input
+                    id="intro"
+                    placeholder="예) 의원님 소속구에 거주하는 20대 여성 000입니다."
+                    value={intro}
+                    onChange={(e) => setIntro(e.target.value)}
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="senderName">보내는 사람 이름 (선택사항)</Label>
-                  <Input
-                    id="senderName"
-                    value={senderName}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setSenderName(e.target.value)
-                    }
-                    placeholder="이름을 입력하지 않으면 '시민'으로 표시됩니다"
+                  <Label htmlFor="userReq">요청사항</Label>
+                  <Textarea
+                    id="userReq"
+                    rows={3}
+                    placeholder="예) 빠른 조사 및 대응을 요청드립니다."
+                    value={userReq}
+                    onChange={(e) => setUserReq(e.target.value)}
                   />
                 </div>
+                <Button
+                  onClick={generateEmail}
+                  disabled={loadingAI}
+                  className="w-full flex justify-center items-center"
+                >
+                  {loadingAI ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      생성 중…
+                    </>
+                  ) : (
+                    'AI로 메일 생성'
+                  )}
+                </Button>
 
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <Label>미리보기</Label>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => copyToClipboard(formattedContent)}
-                    >
+                    <Button variant="ghost" size="icon" onClick={() => copyToClipboard(content)}>
                       <Copy className="h-5 w-5" />
                     </Button>
                   </div>
@@ -190,7 +201,7 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                       <div className="mb-4">
                         <span className="font-semibold">제목:</span> [{issue}]
                       </div>
-                      <div className="whitespace-pre-wrap">{formattedContent}</div>
+                      <div className="whitespace-pre-wrap">{content}</div>
                     </CardContent>
                   </Card>
                 </div>

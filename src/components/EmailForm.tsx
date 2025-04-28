@@ -214,11 +214,16 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                       </a>
                     </Button>
                   ) : (
-                    // PC: Gmail, 그 외 메일 가이드
+                    // PC: Gmail, 메일 앱, 그 외 메일 가이드
                     <>
                       <Button variant="default" className="flex-1" asChild>
                         <a href={getEmailUrl('gmail')} target="_blank" rel="noopener noreferrer">
                           Gmail로 보내기
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="flex-1" asChild>
+                        <a href={getMailtoUrl()} target="_blank" rel="noopener noreferrer">
+                          메일 앱으로 보내기
                         </a>
                       </Button>
                       <Button

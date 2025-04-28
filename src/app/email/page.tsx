@@ -1,42 +1,38 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { MEMBERS } from '@/constants/members';
 import EmailForm from '@/components/EmailForm';
+import { Member } from '@/types/members';
+import { decodeIds } from '@/utils/encoding';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { Member } from '@/types/members';
 
 export default function EmailPage() {
+  const router = useRouter();
   const searchParams = useSearchParams();
-  const ids = searchParams.get('ids');
   const [selectedMembers, setSelectedMembers] = useState<Member[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchMemberData = async () => {
-      try {
-        if (!ids) {
-          setSelectedMembers([]);
-          return;
-        }
+    const encodedIds = searchParams.get('ids');
+    if (!encodedIds) {
+      router.push('/');
+      return;
+    }
 
-        const response = await fetch(`/api/members?ids=${ids}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch member data');
-        }
-        const data = await response.json();
-        setSelectedMembers(data);
-      } catch (error) {
-        console.error('Error fetching member data:', error);
-        setSelectedMembers([]);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchMemberData();
-  }, [ids]);
+    try {
+      const ids = decodeIds(encodedIds);
+      const members = MEMBERS.filter((member) => ids.includes(member.id));
+      setSelectedMembers(members);
+    } catch (error) {
+      console.error('Error processing IDs:', error);
+      router.push('/');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [searchParams, router]);
 
   if (isLoading) {
     return (
@@ -48,6 +44,10 @@ export default function EmailPage() {
         <Footer />
       </div>
     );
+  }
+
+  if (selectedMembers.length === 0) {
+    return null;
   }
 
   return (

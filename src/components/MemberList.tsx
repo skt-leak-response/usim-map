@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Member } from '@/types/members';
 import { MEMBER_CONSTANTS } from '@/constants/members';
+import { encodeIds } from '@/utils/encoding';
 
 interface FilterState {
   party: string;
@@ -13,15 +14,11 @@ interface FilterState {
   search: string;
 }
 
-const compressIds = (ids: number[]): string => {
-  return ids.join('_');
-};
+interface MemberListProps {
+  onSelectionChange: (selectedMembers: Member[]) => void;
+}
 
-const decompressIds = (compressed: string): number[] => {
-  return compressed.split('_').map(Number);
-};
-
-export default function MemberList() {
+export default function MemberList({ onSelectionChange }: MemberListProps) {
   const router = useRouter();
   const [members, setMembers] = useState<Member[]>([]);
   const [filteredMembers, setFilteredMembers] = useState<Member[]>([]);
@@ -79,21 +76,20 @@ export default function MemberList() {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handleMemberSelect = (member: Member) => {
+  const handleMemberClick = (member: Member) => {
     setSelectedMembers((prev) => {
       const isSelected = prev.some((m) => m.id === member.id);
-      if (isSelected) {
-        return prev.filter((m) => m.id !== member.id);
-      } else {
-        return [...prev, member];
-      }
+      const newSelection = isSelected ? prev.filter((m) => m.id !== member.id) : [...prev, member];
+      onSelectionChange(newSelection);
+      return newSelection;
     });
   };
 
   const handleNext = () => {
     if (selectedMembers.length === 0) return;
-    const memberIds = compressIds(selectedMembers.map((member) => member.id));
-    router.push(`/email?ids=${memberIds}`);
+    const ids = selectedMembers.map((member) => member.id);
+    const encodedIds = encodeIds(ids);
+    router.push(`/email?ids=${encodedIds}`);
   };
 
   const uniqueParties = Array.from(new Set(members.map((member) => member.party)));
@@ -240,7 +236,7 @@ export default function MemberList() {
                 <input
                   type="checkbox"
                   checked={selectedMembers.some((m) => m.id === member.id)}
-                  onChange={() => handleMemberSelect(member)}
+                  onChange={() => handleMemberClick(member)}
                   className="h-4 w-4 rounded border-gray-700 text-blue-600 focus:ring-blue-500"
                 />
                 <div className="flex-1">

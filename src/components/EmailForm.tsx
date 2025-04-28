@@ -5,6 +5,8 @@ import { useEmail } from '@/hooks/useEmail';
 import { EMAIL_PROVIDERS } from '@/constants/email';
 import { Copy, ChevronDown, ChevronUp } from 'lucide-react';
 import { Member } from '@/types/members';
+import { useRouter } from 'next/navigation';
+import { encodeIds } from '@/utils/encoding';
 
 interface EmailFormProps {
   selectedMembers: Member[];
@@ -29,10 +31,20 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
     copyToClipboard,
   } = useEmail({ selectedMembers });
 
+  const router = useRouter();
+
   const formattedContent = formatEmailContent();
   const needsBatching = selectedMembers.length > 50;
 
   const currentGroupRecipients = currentMembers;
+
+  const handleSendEmail = () => {
+    if (selectedMembers.length === 0) return;
+
+    const ids = selectedMembers.map((member) => member.id);
+    const encodedIds = encodeIds(ids);
+    router.push(`/email?ids=${encodedIds}`);
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
@@ -183,6 +195,20 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
           복사되었습니다!
         </div>
       )}
+
+      <div className="fixed bottom-8 right-8">
+        <button
+          onClick={handleSendEmail}
+          disabled={selectedMembers.length === 0}
+          className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+            selectedMembers.length === 0
+              ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+              : 'bg-blue-600 text-white hover:bg-blue-700'
+          }`}
+        >
+          선택 완료 ({selectedMembers.length}명)
+        </button>
+      </div>
     </div>
   );
 }

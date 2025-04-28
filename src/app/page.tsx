@@ -1,22 +1,28 @@
 'use client';
+
+import { useState } from 'react';
+import { Member } from '@/types/members';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import MemberList from '@/components/MemberList';
-import { MEMBER_CONSTANTS } from '@/constants/members';
+import EmailForm from '@/components/EmailForm';
 
 export default function Home() {
+  const [selectedMembers, setSelectedMembers] = useState<Member[]>([]);
+
   return (
-    <main className="min-h-screen p-4 md:p-8 bg-gray-900">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {MEMBER_CONSTANTS.MAIN_PAGE.TITLE}
-          </h1>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            {MEMBER_CONSTANTS.MAIN_PAGE.DESCRIPTION}
-          </p>
+    <div className="min-h-screen bg-gray-900">
+      <Header />
+      <main className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-white mb-4">국회의원 선택</h1>
+          <p className="text-gray-300">이메일을 보낼 국회의원을 선택해주세요. (최대 300명)</p>
         </div>
 
-        <MemberList />
-      </div>
-    </main>
+        <MemberList onSelectionChange={setSelectedMembers} />
+        <EmailForm selectedMembers={selectedMembers} />
+      </main>
+      <Footer />
+    </div>
   );
 }

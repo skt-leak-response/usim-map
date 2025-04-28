@@ -34,7 +34,7 @@ export default function MemberPagination({
         size="sm"
         onClick={() => onPageChange(1)}
         disabled={currentPage === 1}
-        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-700"
+        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
       >
         {'<<'}
       </Button>
@@ -43,7 +43,7 @@ export default function MemberPagination({
         size="sm"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-700"
+        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
       >
         {'<'}
       </Button>
@@ -56,7 +56,7 @@ export default function MemberPagination({
           className={`${
             currentPage === page
               ? 'bg-blue-600 text-white'
-              : 'bg-gray-800 text-white border-gray-700 hover:bg-gray-700'
+              : 'bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white'
           }`}
         >
           {page}
@@ -67,7 +67,7 @@ export default function MemberPagination({
         size="sm"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-700"
+        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
       >
         {'>'}
       </Button>
@@ -76,7 +76,7 @@ export default function MemberPagination({
         size="sm"
         onClick={() => onPageChange(totalPages)}
         disabled={currentPage === totalPages}
-        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-700"
+        className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
       >
         {'>>'}
       </Button>

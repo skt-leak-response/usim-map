@@ -1,44 +1,47 @@
 import { NextResponse } from 'next/server';
 import membersData from '@/data/members.json';
 
-export interface Member {
+interface Member {
+  term: string;
   name: string;
   party: string;
-  committee: string;
-  region: string;
-  subRegion: string;
+  committees: string[];
+  city: string;
+  district: string;
+  gender: string;
+  election_count: string;
+  election_method: string;
   email: string;
 }
 
 export async function GET(request: Request) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const party = searchParams.get('party');
-    const committee = searchParams.get('committee');
-    const region = searchParams.get('region');
-    const subRegion = searchParams.get('subRegion');
+  const { searchParams } = new URL(request.url);
+  const party = searchParams.get('party');
+  const committee = searchParams.get('committee');
+  const city = searchParams.get('city');
+  const district = searchParams.get('district');
 
+  try {
     let filteredMembers: Member[] = membersData;
 
     if (party) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.party === party);
+      filteredMembers = filteredMembers.filter((member) => member.party === party);
     }
     if (committee) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.committee === committee);
+      filteredMembers = filteredMembers.filter((member) =>
+        member.committees.some((c) => c === committee),
+      );
     }
-    if (region) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.region === region);
+    if (city) {
+      filteredMembers = filteredMembers.filter((member) => member.city === city);
     }
-    if (subRegion) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.subRegion === subRegion);
+    if (district) {
+      filteredMembers = filteredMembers.filter((member) => member.district === district);
     }
 
-    return NextResponse.json({
-      members: filteredMembers,
-      total: filteredMembers.length,
-    });
+    return NextResponse.json(filteredMembers);
   } catch (error) {
     console.error('Error processing members:', error);
-    return NextResponse.json({ error: 'Failed to process members data' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to process members' }, { status: 500 });
   }
 }

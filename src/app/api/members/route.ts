@@ -1,44 +1,38 @@
 import { NextResponse } from 'next/server';
 import membersData from '@/data/members.json';
 
-export interface Member {
+interface Member {
+  id: number;
+  term: string;
   name: string;
   party: string;
-  committee: string;
-  region: string;
-  subRegion: string;
-  email: string;
+  committees: string[];
+  city: string;
+  district: string;
+  gender: string;
+  election_count: string;
+  election_method: string;
+  email?: string;
 }
 
+const decompressIds = (compressed: string): number[] => {
+  return compressed.split('_').map(Number);
+};
+
 export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const compressedIds = searchParams.get('ids');
+
   try {
-    const { searchParams } = new URL(request.url);
-    const party = searchParams.get('party');
-    const committee = searchParams.get('committee');
-    const region = searchParams.get('region');
-    const subRegion = searchParams.get('subRegion');
-
-    let filteredMembers: Member[] = membersData;
-
-    if (party) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.party === party);
+    if (compressedIds) {
+      const ids = decompressIds(compressedIds);
+      const selectedMembers = membersData.filter((member) => ids.includes(member.id)) as Member[];
+      return NextResponse.json(selectedMembers);
+    } else {
+      return NextResponse.json(membersData as Member[]);
     }
-    if (committee) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.committee === committee);
-    }
-    if (region) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.region === region);
-    }
-    if (subRegion) {
-      filteredMembers = filteredMembers.filter((member: Member) => member.subRegion === subRegion);
-    }
-
-    return NextResponse.json({
-      members: filteredMembers,
-      total: filteredMembers.length,
-    });
   } catch (error) {
-    console.error('Error processing members:', error);
-    return NextResponse.json({ error: 'Failed to process members data' }, { status: 500 });
+    console.error('Error fetching members:', error);
+    return NextResponse.json({ error: 'Failed to fetch members' }, { status: 500 });
   }
 }

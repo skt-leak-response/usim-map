@@ -1,60 +1,83 @@
 [
   {
+    "id": 1,
     "term": "제22대",
     "name": "강경숙",
     "party": "조국혁신당",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "gracesook52@rebuildingk.kr"
   },
   {
+    "id": 2,
     "term": "제22대",
     "name": "강대식",
     "party": "국민의힘",
-    "committees": ["국방위원회"],
+    "committees": [
+      "국방위원회"
+    ],
     "city": "대구",
     "district": "동구군위군을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kds21341@naver.com"
   },
   {
+    "id": 3,
     "term": "제22대",
     "name": "강득구",
     "party": "더불어민주당",
-    "committees": ["환경노동위원회", "기후위기 특별위원회"],
+    "committees": [
+      "환경노동위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경기",
     "district": "안양시만안구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "mainsail440@daum.net"
   },
   {
+    "id": 4,
     "term": "제22대",
     "name": "강명구",
     "party": "국민의힘",
-    "committees": ["국회운영위원회", "정무위원회"],
+    "committees": [
+      "국회운영위원회",
+      "정무위원회"
+    ],
     "city": "경북",
     "district": "구미시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "myounggu.power@gmail.com"
   },
   {
+    "id": 5,
     "term": "제22대",
     "name": "강민국",
     "party": "국민의힘",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "경남",
     "district": "진주시을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "strongwind01@naver.com"
   },
   {
+    "id": 6,
     "term": "제22대",
     "name": "강선영",
     "party": "국민의힘",
@@ -66,86 +89,120 @@
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "335kang@naver.com"
   },
   {
+    "id": 7,
     "term": "제22대",
     "name": "강선우",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "보건복지위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "서울",
     "district": "강서구갑",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "gangseo.kap@gmail.com"
   },
   {
+    "id": 8,
     "term": "제22대",
     "name": "강승규",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회", "예산결산특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "예산결산특별위원회"
+    ],
     "city": "충남",
     "district": "홍성군예산군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "teamkang9@gmail.com"
   },
   {
+    "id": 9,
     "term": "제22대",
     "name": "강유정",
     "party": "더불어민주당",
-    "committees": ["국회운영위원회", "문화체육관광위원회"],
+    "committees": [
+      "국회운영위원회",
+      "문화체육관광위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "yujung7522@gmail.com"
   },
   {
+    "id": 10,
     "term": "제22대",
     "name": "강준현",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "세종특별자치시을",
     "district": "",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jhkang315@gmail.com"
   },
   {
+    "id": 11,
     "term": "제22대",
     "name": "강훈식",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "충남",
     "district": "아산시을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "gohoonsik@gmail.com"
   },
   {
+    "id": 12,
     "term": "제22대",
     "name": "고동진",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "서울",
     "district": "강남구병",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dj_koh7163@naver.com"
   },
   {
+    "id": 13,
     "term": "제22대",
     "name": "고민정",
     "party": "더불어민주당",
-    "committees": ["교육위원회", "국회운영위원회"],
+    "committees": [
+      "교육위원회",
+      "국회운영위원회"
+    ],
     "city": "서울",
     "district": "광진구을",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kominjung21@gmail.com"
   },
   {
+    "id": 14,
     "term": "제22대",
     "name": "곽규택",
     "party": "국민의힘",
@@ -158,53 +215,75 @@
     "district": "서구동구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kktlaw@naver.com"
   },
   {
+    "id": 15,
     "term": "제22대",
     "name": "곽상언",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "서울",
     "district": "종로구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jongno.kwak@gmail.com"
   },
   {
+    "id": 16,
     "term": "제22대",
     "name": "구자근",
     "party": "국민의힘",
-    "committees": ["기획재정위원회", "예산결산특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회"
+    ],
     "city": "경북",
     "district": "구미시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "can929292@naver.com"
   },
   {
+    "id": 17,
     "term": "제22대",
     "name": "권성동",
     "party": "국민의힘",
-    "committees": ["정무위원회", "국회운영위원회", "정보위원회"],
+    "committees": [
+      "정무위원회",
+      "국회운영위원회",
+      "정보위원회"
+    ],
     "city": "강원",
     "district": "강릉시",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ksdd22@naver.com"
   },
   {
+    "id": 18,
     "term": "제22대",
     "name": "권영세",
     "party": "국민의힘",
-    "committees": ["국토교통위원회", "정보위원회"],
+    "committees": [
+      "국토교통위원회",
+      "정보위원회"
+    ],
     "city": "서울",
     "district": "용산구",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yskys2020@naver.com"
   },
   {
+    "id": 19,
     "term": "제22대",
     "name": "권영진",
     "party": "국민의힘",
@@ -217,20 +296,26 @@
     "district": "달서구병",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kyjtongil@naver.com"
   },
   {
+    "id": 20,
     "term": "제22대",
     "name": "권칠승",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "경기",
     "district": "화성시병",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "anotherk7@gmail.com"
   },
   {
+    "id": 21,
     "term": "제22대",
     "name": "권향엽",
     "party": "더불어민주당",
@@ -243,86 +328,120 @@
     "district": "순천시광양시곡성군구례군을",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ironkwon24@gmail.com (회관), ironregion24@gmail.com (지역) "
   },
   {
+    "id": 22,
     "term": "제22대",
     "name": "김건",
     "party": "국민의힘",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "gkim338@naver.com"
   },
   {
+    "id": 23,
     "term": "제22대",
     "name": "김교흥",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "인천",
     "district": "서구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimkh4u@naver.com"
   },
   {
+    "id": 24,
     "term": "제22대",
     "name": "김기웅",
     "party": "국민의힘",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "대구",
     "district": "중구남구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "assembly0915@naver.com"
   },
   {
+    "id": 25,
     "term": "제22대",
     "name": "김기표",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회"],
+    "committees": [
+      "법제사법위원회"
+    ],
     "city": "경기",
     "district": "부천시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimgipyo24@naver.com"
   },
   {
+    "id": 26,
     "term": "제22대",
     "name": "김기현",
     "party": "국민의힘",
-    "committees": ["외교통일위원회", "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"],
+    "committees": [
+      "외교통일위원회",
+      "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"
+    ],
     "city": "울산",
     "district": "남구을",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "together.eut@gmail.com"
   },
   {
+    "id": 27,
     "term": "제22대",
     "name": "김남근",
     "party": "더불어민주당",
-    "committees": ["정무위원회", "여성가족위원회"],
+    "committees": [
+      "정무위원회",
+      "여성가족위원회"
+    ],
     "city": "서울",
     "district": "성북구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "namgeunkim10@gmail.com"
   },
   {
+    "id": 28,
     "term": "제22대",
     "name": "김남희",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회", "여성가족위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "보건복지위원회",
+      "여성가족위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "경기",
     "district": "광명시을",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "knh@na.go.kr"
   },
   {
+    "id": 29,
     "term": "제22대",
     "name": "김대식",
     "party": "국민의힘",
@@ -335,42 +454,57 @@
     "district": "사상구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dskimbless@naver.com"
   },
   {
+    "id": 30,
     "term": "제22대",
     "name": "김도읍",
     "party": "국민의힘",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "부산",
     "district": "강서구",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ldek3525@naver.com"
   },
   {
+    "id": 31,
     "term": "제22대",
     "name": "김동아",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "서울",
     "district": "서대문구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dongah1021@gmail.com"
   },
   {
+    "id": 32,
     "term": "제22대",
     "name": "김문수",
     "party": "더불어민주당",
-    "committees": ["교육위원회", "예산결산특별위원회"],
+    "committees": [
+      "교육위원회",
+      "예산결산특별위원회"
+    ],
     "city": "전남",
     "district": "순천시광양시곡성군구례군갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "assemblymoonsu@gmail.com"
   },
   {
+    "id": 33,
     "term": "제22대",
     "name": "김미애",
     "party": "국민의힘",
@@ -383,42 +517,57 @@
     "district": "해운대구을",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "015miae@naver.com"
   },
   {
+    "id": 34,
     "term": "제22대",
     "name": "김민석",
     "party": "더불어민주당",
-    "committees": ["국방위원회"],
+    "committees": [
+      "국방위원회"
+    ],
     "city": "서울",
     "district": "영등포구을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "newkms2030@gmail.com"
   },
   {
+    "id": 35,
     "term": "제22대",
     "name": "김민전",
     "party": "국민의힘",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "mgk2224@naver.com"
   },
   {
+    "id": 36,
     "term": "제22대",
     "name": "김병기",
     "party": "더불어민주당",
-    "committees": ["정무위원회", "정보위원회"],
+    "committees": [
+      "정무위원회",
+      "정보위원회"
+    ],
     "city": "서울",
     "district": "동작구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "the.kim.weapon@gmail.com"
   },
   {
+    "id": 37,
     "term": "제22대",
     "name": "김병주",
     "party": "더불어민주당",
@@ -433,86 +582,120 @@
     "district": "남양주시을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimbyungjoo62@gmail.com"
   },
   {
+    "id": 38,
     "term": "제22대",
     "name": "김상욱",
     "party": "국민의힘",
-    "committees": ["여성가족위원회", "농림축산식품해양수산위원회"],
+    "committees": [
+      "여성가족위원회",
+      "농림축산식품해양수산위원회"
+    ],
     "city": "울산",
     "district": "남구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimsangwook80@naver.com"
   },
   {
+    "id": 39,
     "term": "제22대",
     "name": "김상훈",
     "party": "국민의힘",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "대구",
     "district": "서구",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kshdg11@gmail.com"
   },
   {
+    "id": 40,
     "term": "제22대",
     "name": "김석기",
     "party": "국민의힘",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "경북",
     "district": "경주시",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "7882576kj@hanmail.net"
   },
   {
+    "id": 41,
     "term": "제22대",
     "name": "김선교",
     "party": "국민의힘",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "경기",
     "district": "여주시양평군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimsg5358@naver.com"
   },
   {
+    "id": 42,
     "term": "제22대",
     "name": "김선민",
     "party": "조국혁신당",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "22.ksunmin@gmail.com"
   },
   {
+    "id": 43,
     "term": "제22대",
     "name": "김성원",
     "party": "국민의힘",
-    "committees": ["예산결산특별위원회", "산업통상자원중소벤처기업위원회", "국회운영위원회"],
+    "committees": [
+      "예산결산특별위원회",
+      "산업통상자원중소벤처기업위원회",
+      "국회운영위원회"
+    ],
     "city": "경기",
     "district": "동두천시양주시연천군을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimsw910@naver.com"
   },
   {
+    "id": 44,
     "term": "제22대",
     "name": "김성환",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회", "기후위기 특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "서울",
     "district": "노원구을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimnowongu@gmail.com"
   },
   {
+    "id": 45,
     "term": "제22대",
     "name": "김성회",
     "party": "더불어민주당",
@@ -525,119 +708,167 @@
     "district": "고양시갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kshoi72@naver.com"
   },
   {
+    "id": 46,
     "term": "제22대",
     "name": "김소희",
     "party": "국민의힘",
-    "committees": ["환경노동위원회", "기후위기 특별위원회"],
+    "committees": [
+      "환경노동위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "shkay73@naver.com"
   },
   {
+    "id": 47,
     "term": "제22대",
     "name": "김승수",
     "party": "국민의힘",
-    "committees": ["문화체육관광위원회", "예산결산특별위원회", "국회운영위원회"],
+    "committees": [
+      "문화체육관광위원회",
+      "예산결산특별위원회",
+      "국회운영위원회"
+    ],
     "city": "대구",
     "district": "북구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kiminnotank@naver.com"
   },
   {
+    "id": 48,
     "term": "제22대",
     "name": "김승원",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "경기",
     "district": "수원시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "swkimsuwon@gmail.com"
   },
   {
+    "id": 49,
     "term": "제22대",
     "name": "김영배",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "서울",
     "district": "성북구갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yb7841521@gmail.com "
   },
   {
+    "id": 50,
     "term": "제22대",
     "name": "김영진",
     "party": "더불어민주당",
-    "committees": ["예산결산특별위원회", "기획재정위원회"],
+    "committees": [
+      "예산결산특별위원회",
+      "기획재정위원회"
+    ],
     "city": "경기",
     "district": "수원시병",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "youngjink840@naver.com"
   },
   {
+    "id": 51,
     "term": "제22대",
     "name": "김영호",
     "party": "더불어민주당",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "서울",
     "district": "서대문구을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kim-youngho@naver.com"
   },
   {
+    "id": 52,
     "term": "제22대",
     "name": "김영환",
     "party": "더불어민주당",
-    "committees": ["예산결산특별위원회", "기획재정위원회"],
+    "committees": [
+      "예산결산특별위원회",
+      "기획재정위원회"
+    ],
     "city": "경기",
     "district": "고양시정",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "saseyoung@naver.com"
   },
   {
+    "id": 53,
     "term": "제22대",
     "name": "김예지",
     "party": "국민의힘",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "yeajijoy@gmail.com"
   },
   {
+    "id": 54,
     "term": "제22대",
     "name": "김용만",
     "party": "더불어민주당",
-    "committees": ["여성가족위원회", "정무위원회"],
+    "committees": [
+      "여성가족위원회",
+      "정무위원회"
+    ],
     "city": "경기",
     "district": "하남시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ymk0814@naver.com"
   },
   {
+    "id": 55,
     "term": "제22대",
     "name": "김용민",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회"],
+    "committees": [
+      "법제사법위원회"
+    ],
     "city": "경기",
     "district": "남양주시병",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "fopeopler76@gmail.com"
   },
   {
+    "id": 56,
     "term": "제22대",
     "name": "김용태",
     "party": "국민의힘",
@@ -651,64 +882,86 @@
     "district": "포천시가평군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "official_yt@naver.com"
   },
   {
+    "id": 57,
     "term": "제22대",
     "name": "김우영",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "서울",
     "district": "은평구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimeunpyung0@gmail.com"
   },
   {
+    "id": 58,
     "term": "제22대",
     "name": "김원이",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "전남",
     "district": "목포시",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimwoni923@gmail.com"
   },
   {
+    "id": 59,
     "term": "제22대",
     "name": "김위상",
     "party": "국민의힘",
-    "committees": ["환경노동위원회"],
+    "committees": [
+      "환경노동위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "wisangk@naver.com"
   },
   {
+    "id": 60,
     "term": "제22대",
     "name": "김윤",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "the.kimyoon@gmail.com"
   },
   {
+    "id": 61,
     "term": "제22대",
     "name": "김윤덕",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회"],
+    "committees": [
+      "문화체육관광위원회"
+    ],
     "city": "전북",
     "district": "전주시갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ydkim22@naver.com"
   },
   {
+    "id": 62,
     "term": "제22대",
     "name": "김은혜",
     "party": "국민의힘",
@@ -720,31 +973,42 @@
     "district": "성남시분당구을",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimeunhye_official@naver.com"
   },
   {
+    "id": 63,
     "term": "제22대",
     "name": "김장겸",
     "party": "국민의힘",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "623kimjk@gmail.com"
   },
   {
+    "id": 64,
     "term": "제22대",
     "name": "김재섭",
     "party": "국민의힘",
-    "committees": ["정무위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "정무위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "서울",
     "district": "도봉구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dobongstar24@naver.com"
   },
   {
+    "id": 65,
     "term": "제22대",
     "name": "김재원",
     "party": "조국혁신당",
@@ -756,97 +1020,133 @@
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "jwk@rebuildingk.kr"
   },
   {
+    "id": 66,
     "term": "제22대",
     "name": "김정재",
     "party": "국민의힘",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "경북",
     "district": "포항시북구",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "lawjj@naver.com"
   },
   {
+    "id": 67,
     "term": "제22대",
     "name": "김정호",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회", "기후위기 특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경남",
     "district": "김해시을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimjungho3359@daum.net "
   },
   {
+    "id": 68,
     "term": "제22대",
     "name": "김종민",
     "party": "무소속",
-    "committees": ["산업통상자원중소벤처기업위원회", "기후위기 특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "세종특별자치시갑",
     "district": "",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "withmin413@gmail.com"
   },
   {
+    "id": 69,
     "term": "제22대",
     "name": "김종양",
     "party": "국민의힘",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "경남",
     "district": "창원시의창구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jykimm61@assembly.go.kr"
   },
   {
+    "id": 70,
     "term": "제22대",
     "name": "김주영",
     "party": "더불어민주당",
-    "committees": ["환경노동위원회"],
+    "committees": [
+      "환경노동위원회"
+    ],
     "city": "경기",
     "district": "김포시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "gimpolovekjy@gmail.com"
   },
   {
+    "id": 71,
     "term": "제22대",
     "name": "김준혁",
     "party": "더불어민주당",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "경기",
     "district": "수원시정",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jhkim1789@naver.com"
   },
   {
+    "id": 72,
     "term": "제22대",
     "name": "김준형",
     "party": "조국혁신당",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "joonforpeace@gmail.com"
   },
   {
+    "id": 73,
     "term": "제22대",
     "name": "김태년",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "경기",
     "district": "성남시수정구",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ktn0320@daum.net"
   },
   {
+    "id": 74,
     "term": "제22대",
     "name": "김태선",
     "party": "더불어민주당",
@@ -859,53 +1159,72 @@
     "district": "동구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kts230410@gmail.com"
   },
   {
+    "id": 75,
     "term": "제22대",
     "name": "김태호",
     "party": "국민의힘",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "경남",
     "district": "양산시을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "907kth@naver.com"
   },
   {
+    "id": 76,
     "term": "제22대",
     "name": "김한규",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회", "여성가족위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "여성가족위원회"
+    ],
     "city": "제주",
     "district": "제주시을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hanqkim74@assembly.go.kr"
   },
   {
+    "id": 77,
     "term": "제22대",
     "name": "김현",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "경기",
     "district": "안산시을",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kimhyun0610@gmail.com"
   },
   {
+    "id": 78,
     "term": "제22대",
     "name": "김현정",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "경기",
     "district": "평택시병",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ubuntu_21@naver.com"
   },
   {
+    "id": 79,
     "term": "제22대",
     "name": "김형동",
     "party": "국민의힘",
@@ -918,75 +1237,105 @@
     "district": "안동시예천군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "khyungdong@naver.com"
   },
   {
+    "id": 80,
     "term": "제22대",
     "name": "김희정",
     "party": "국민의힘",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "부산",
     "district": "연제구",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "khjkorea@assembly.go.kr"
   },
   {
+    "id": 81,
     "term": "제22대",
     "name": "나경원",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "서울",
     "district": "동작구을",
     "gender": "여",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "nakw63@naver.com"
   },
   {
+    "id": 82,
     "term": "제22대",
     "name": "남인순",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "보건복지위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "서울",
     "district": "송파구병",
     "gender": "여",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "nisoon@na.go.kr"
   },
   {
+    "id": 83,
     "term": "제22대",
     "name": "노종면",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회", "국회운영위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회",
+      "국회운영위원회"
+    ],
     "city": "인천",
     "district": "부평구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yesbupyeong@gmail.com"
   },
   {
+    "id": 84,
     "term": "제22대",
     "name": "맹성규",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "인천",
     "district": "남동구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "minjoomsk@naver.com"
   },
   {
+    "id": 85,
     "term": "제22대",
     "name": "모경종",
     "party": "더불어민주당",
-    "committees": ["행정안전위원회", "국회운영위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "행정안전위원회",
+      "국회운영위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "인천",
     "district": "서구병",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "moalarm2024@naver.com"
   },
   {
+    "id": 86,
     "term": "제22대",
     "name": "문금주",
     "party": "더불어민주당",
@@ -999,42 +1348,56 @@
     "district": "고흥군보성군장흥군강진군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "moongj67@gmail.com"
   },
   {
+    "id": 87,
     "term": "제22대",
     "name": "문대림",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "제주",
     "district": "제주시갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "moondaelim@naver.com"
   },
   {
+    "id": 88,
     "term": "제22대",
     "name": "문정복",
     "party": "더불어민주당",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "경기",
     "district": "시흥시갑",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "indobangrang@hanmail.net"
   },
   {
+    "id": 89,
     "term": "제22대",
     "name": "문진석",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "충남",
     "district": "천안시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jmoon123@naver.com"
   },
   {
+    "id": 90,
     "term": "제22대",
     "name": "민병덕",
     "party": "더불어민주당",
@@ -1046,20 +1409,27 @@
     "district": "안양시동안구갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "anyangmin@gmail.com"
   },
   {
+    "id": 91,
     "term": "제22대",
     "name": "민형배",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회", "기후위기 특별위원회"],
+    "committees": [
+      "문화체육관광위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "광주",
     "district": "광산구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "mhb1961@naver.com"
   },
   {
+    "id": 92,
     "term": "제22대",
     "name": "민홍철",
     "party": "더불어민주당",
@@ -1071,53 +1441,71 @@
     "district": "김해시갑",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "gikuchon@nate.com"
   },
   {
+    "id": 93,
     "term": "제22대",
     "name": "박균택",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회"],
+    "committees": [
+      "법제사법위원회"
+    ],
     "city": "광주",
     "district": "광산구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "parkkyoontaek@naver.com"
   },
   {
+    "id": 94,
     "term": "제22대",
     "name": "박대출",
     "party": "국민의힘",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "경남",
     "district": "진주시갑",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dcparkjj@assembly.go.kr"
   },
   {
+    "id": 95,
     "term": "제22대",
     "name": "박덕흠",
     "party": "국민의힘",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "충북",
     "district": "보은군옥천군영동군괴산군",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "parkdukhyum@naver.com"
   },
   {
+    "id": 96,
     "term": "제22대",
     "name": "박민규",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "서울",
     "district": "관악구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "minkyucool@assembly.go.kr"
   },
   {
+    "id": 97,
     "term": "제22대",
     "name": "박범계",
     "party": "더불어민주당",
@@ -1129,31 +1517,41 @@
     "district": "서구을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "pbk705@naver.com"
   },
   {
+    "id": 98,
     "term": "제22대",
     "name": "박상웅",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "경남",
     "district": "밀양시의령군함안군창녕군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "parksw2789@naver.com"
   },
   {
+    "id": 99,
     "term": "제22대",
     "name": "박상혁",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "경기",
     "district": "김포시을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "gimpo_park@naver.com"
   },
   {
+    "id": 100,
     "term": "제22대",
     "name": "박선원",
     "party": "더불어민주당",
@@ -1166,86 +1564,120 @@
     "district": "부평구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "qkrsw20@naver.com"
   },
   {
+    "id": 101,
     "term": "제22대",
     "name": "박성민",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "울산",
     "district": "중구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "smpark3340@naver.com"
   },
   {
+    "id": 102,
     "term": "제22대",
     "name": "박성준",
     "party": "더불어민주당",
-    "committees": ["교육위원회", "국회운영위원회"],
+    "committees": [
+      "교육위원회",
+      "국회운영위원회"
+    ],
     "city": "서울",
     "district": "중구성동구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "pksjoffice@naver.com"
   },
   {
+    "id": 103,
     "term": "제22대",
     "name": "박성훈",
     "party": "국민의힘",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "부산",
     "district": "북구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "parksunghoon71@naver.com"
   },
   {
+    "id": 104,
     "term": "제22대",
     "name": "박수민",
     "party": "국민의힘",
-    "committees": ["국회운영위원회", "문화체육관광위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "국회운영위원회",
+      "문화체육관광위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "서울",
     "district": "강남구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "parksm2028@gmail.com"
   },
   {
+    "id": 105,
     "term": "제22대",
     "name": "박수영",
     "party": "국민의힘",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "부산",
     "district": "남구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "psyfor2020@naver.com"
   },
   {
+    "id": 106,
     "term": "제22대",
     "name": "박수현",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회", "예산결산특별위원회"],
+    "committees": [
+      "문화체육관광위원회",
+      "예산결산특별위원회"
+    ],
     "city": "충남",
     "district": "공주시부여군청양군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "worker21c@gmail.com"
   },
   {
+    "id": 107,
     "term": "제22대",
     "name": "박용갑",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "대전",
     "district": "중구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "pyk393329@gmail.com"
   },
   {
+    "id": 108,
     "term": "제22대",
     "name": "박은정",
     "party": "조국혁신당",
@@ -1257,53 +1689,73 @@
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "bakeunjeong22@gmail.com"
   },
   {
+    "id": 109,
     "term": "제22대",
     "name": "박정",
     "party": "더불어민주당",
-    "committees": ["예산결산특별위원회", "환경노동위원회"],
+    "committees": [
+      "예산결산특별위원회",
+      "환경노동위원회"
+    ],
     "city": "경기",
     "district": "파주시을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "pjkorea21c@naver.com"
   },
   {
+    "id": 110,
     "term": "제22대",
     "name": "박정하",
     "party": "국민의힘",
-    "committees": ["문화체육관광위원회"],
+    "committees": [
+      "문화체육관광위원회"
+    ],
     "city": "강원",
     "district": "원주시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "newwonju643@naver.com"
   },
   {
+    "id": 111,
     "term": "제22대",
     "name": "박정현",
     "party": "더불어민주당",
-    "committees": ["행정안전위원회", "기후위기 특별위원회"],
+    "committees": [
+      "행정안전위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "대전",
     "district": "대덕구",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "greenwind21@gmail.com"
   },
   {
+    "id": 112,
     "term": "제22대",
     "name": "박정훈",
     "party": "국민의힘",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "서울",
     "district": "송파구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "songpapjh22@naver.com"
   },
   {
+    "id": 113,
     "term": "제22대",
     "name": "박주민",
     "party": "더불어민주당",
@@ -1315,9 +1767,11 @@
     "district": "은평구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "joomincenter@gmail.com"
   },
   {
+    "id": 114,
     "term": "제22대",
     "name": "박준태",
     "party": "국민의힘",
@@ -1330,130 +1784,183 @@
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "napark81@naver.com"
   },
   {
+    "id": 115,
     "term": "제22대",
     "name": "박지원",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회", "정보위원회"],
+    "committees": [
+      "법제사법위원회",
+      "정보위원회"
+    ],
     "city": "전남",
     "district": "해남군완도군진도군",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jwp615@naver.com"
   },
   {
+    "id": 116,
     "term": "제22대",
     "name": "박지혜",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회", "예산결산특별위원회", "기후위기 특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "예산결산특별위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경기",
     "district": "의정부시갑",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "u.future2024@gmail.com"
   },
   {
+    "id": 117,
     "term": "제22대",
     "name": "박찬대",
     "party": "더불어민주당",
-    "committees": ["국방위원회", "국회운영위원회", "정보위원회"],
+    "committees": [
+      "국방위원회",
+      "국회운영위원회",
+      "정보위원회"
+    ],
     "city": "인천",
     "district": "연수구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "parkcd0214@gmail.com"
   },
   {
+    "id": 118,
     "term": "제22대",
     "name": "박충권",
     "party": "국민의힘",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "teampark2024@gmail.com"
   },
   {
+    "id": 119,
     "term": "제22대",
     "name": "박해철",
     "party": "더불어민주당",
-    "committees": ["환경노동위원회"],
+    "committees": [
+      "환경노동위원회"
+    ],
     "city": "경기",
     "district": "안산시병",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "new_ansan@naver.com"
   },
   {
+    "id": 120,
     "term": "제22대",
     "name": "박형수",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회", "국회운영위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "국회운영위원회"
+    ],
     "city": "경북",
     "district": "의성군청송군영덕군울진군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "7844165@naver.com"
   },
   {
+    "id": 121,
     "term": "제22대",
     "name": "박홍근",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "서울",
     "district": "중랑구을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "maumgil88@gmail.com"
   },
   {
+    "id": 122,
     "term": "제22대",
     "name": "박홍배",
     "party": "더불어민주당",
-    "committees": ["환경노동위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "환경노동위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "plz.hongbae@gmail.com"
   },
   {
+    "id": 123,
     "term": "제22대",
     "name": "박희승",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회"],
+    "committees": [
+      "법제사법위원회"
+    ],
     "city": "전북",
     "district": "남원시장수군임실군순창군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "parkhs2024@gmail.com"
   },
   {
+    "id": 124,
     "term": "제22대",
     "name": "배준영",
     "party": "국민의힘",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "인천",
     "district": "중구강화군옹진군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jyb116@naver.com"
   },
   {
+    "id": 125,
     "term": "제22대",
     "name": "배현진",
     "party": "국민의힘",
-    "committees": ["문화체육관광위원회"],
+    "committees": [
+      "문화체육관광위원회"
+    ],
     "city": "서울",
     "district": "송파구을",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": ""
   },
   {
+    "id": 126,
     "term": "제22대",
     "name": "백선희",
     "party": "조국혁신당",
@@ -1468,28 +1975,38 @@
     "election_method": "비례대표"
   },
   {
+    "id": 127,
     "term": "제22대",
     "name": "백승아",
     "party": "더불어민주당",
-    "committees": ["교육위원회", "여성가족위원회"],
+    "committees": [
+      "교육위원회",
+      "여성가족위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "bsa_teacher@naver.com"
   },
   {
+    "id": 128,
     "term": "제22대",
     "name": "백종헌",
     "party": "국민의힘",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "부산",
     "district": "금정구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "bjh438@naver.com"
   },
   {
+    "id": 129,
     "term": "제22대",
     "name": "백혜련",
     "party": "더불어민주당",
@@ -1501,20 +2018,26 @@
     "district": "수원시을",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "bhrassembly0217@gmail.com"
   },
   {
+    "id": 130,
     "term": "제22대",
     "name": "복기왕",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "충남",
     "district": "아산시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "vsbok@naver.com"
   },
   {
+    "id": 131,
     "term": "제22대",
     "name": "부승찬",
     "party": "더불어민주당",
@@ -1527,108 +2050,154 @@
     "district": "용인시병",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "booseungchan.yongin@gmail.com"
   },
   {
+    "id": 132,
     "term": "제22대",
     "name": "서명옥",
     "party": "국민의힘",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "서울",
     "district": "강남구갑",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "assembly_ok@naver.com"
   },
   {
+    "id": 133,
     "term": "제22대",
     "name": "서미화",
     "party": "더불어민주당",
-    "committees": ["국회운영위원회", "보건복지위원회"],
+    "committees": [
+      "국회운영위원회",
+      "보건복지위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "m2hwaseo@gmail.com"
   },
   {
+    "id": 134,
     "term": "제22대",
     "name": "서범수",
     "party": "국민의힘",
-    "committees": ["국토교통위원회", "여성가족위원회", "예산결산특별위원회", "기후위기 특별위원회"],
+    "committees": [
+      "국토교통위원회",
+      "여성가족위원회",
+      "예산결산특별위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "울산",
     "district": "울주군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sbsulju@daum.net"
   },
   {
+    "id": 135,
     "term": "제22대",
     "name": "서삼석",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "전남",
     "district": "영암군무안군신안군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "3s0011@naver.com"
   },
   {
+    "id": 136,
     "term": "제22대",
     "name": "서영교",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회", "여성가족위원회"],
+    "committees": [
+      "법제사법위원회",
+      "여성가족위원회"
+    ],
     "city": "서울",
     "district": "중랑구갑",
     "gender": "여",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "youngkyos@naver.com"
   },
   {
+    "id": 137,
     "term": "제22대",
     "name": "서영석",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회", "예산결산특별위원회"],
+    "committees": [
+      "보건복지위원회",
+      "예산결산특별위원회"
+    ],
     "city": "경기",
     "district": "부천시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "guseng@hanmail.net"
   },
   {
+    "id": 138,
     "term": "제22대",
     "name": "서왕진",
     "party": "조국혁신당",
-    "committees": ["산업통상자원중소벤처기업위원회", "기후위기 특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "wjseo21@rebuildingk.kr"
   },
   {
+    "id": 139,
     "term": "제22대",
     "name": "서일준",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "경남",
     "district": "거제시",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sijkorea@gmail.com"
   },
   {
+    "id": 140,
     "term": "제22대",
     "name": "서지영",
     "party": "국민의힘",
-    "committees": ["교육위원회", "국회운영위원회"],
+    "committees": [
+      "교육위원회",
+      "국회운영위원회"
+    ],
     "city": "부산",
     "district": "동래구",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jee21dongnae@naver.com"
   },
   {
+    "id": 141,
     "term": "제22대",
     "name": "서천호",
     "party": "국민의힘",
@@ -1640,31 +2209,41 @@
     "district": "사천시남해군하동군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "tjcjsgh2024@naver.com"
   },
   {
+    "id": 142,
     "term": "제22대",
     "name": "성일종",
     "party": "국민의힘",
-    "committees": ["국방위원회"],
+    "committees": [
+      "국방위원회"
+    ],
     "city": "충남",
     "district": "서산시태안군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sij5140@naver.com"
   },
   {
+    "id": 143,
     "term": "제22대",
     "name": "소병훈",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "경기",
     "district": "광주시갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sotong848@daum.net"
   },
   {
+    "id": 144,
     "term": "제22대",
     "name": "손명수",
     "party": "더불어민주당",
@@ -1676,20 +2255,26 @@
     "district": "용인시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sonms@assembly.go.kr"
   },
   {
+    "id": 145,
     "term": "제22대",
     "name": "송기헌",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "강원",
     "district": "원주시을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "peacesong1@naver.com"
   },
   {
+    "id": 146,
     "term": "제22대",
     "name": "송석준",
     "party": "국민의힘",
@@ -1701,97 +2286,135 @@
     "district": "이천시",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "734ssj@gmail.com"
   },
   {
+    "id": 147,
     "term": "제22대",
     "name": "송언석",
     "party": "국민의힘",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "경북",
     "district": "김천시",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": ""
   },
   {
+    "id": 148,
     "term": "제22대",
     "name": "송옥주",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "경기",
     "district": "화성시갑",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "songok4740@naver.com"
   },
   {
+    "id": 149,
     "term": "제22대",
     "name": "송재봉",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "충북",
     "district": "청주시청원구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sjbong4381@naver.com"
   },
   {
+    "id": 150,
     "term": "제22대",
     "name": "신동욱",
     "party": "국민의힘",
-    "committees": ["기획재정위원회", "예산결산특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회"
+    ],
     "city": "서울",
     "district": "서초구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dw7227@naver.com"
   },
   {
+    "id": 151,
     "term": "제22대",
     "name": "신성범",
     "party": "국민의힘",
-    "committees": ["과학기술정보방송통신위원회", "정보위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회",
+      "정보위원회"
+    ],
     "city": "경남",
     "district": "산청군함양군거창군합천군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": ""
   },
   {
+    "id": 152,
     "term": "제22대",
     "name": "신영대",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회", "예산결산특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회"
+    ],
     "city": "전북",
     "district": "군산시김제시부안군갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "0415gunsan@gmail.com / syd@assembly.go.kr"
   },
   {
+    "id": 153,
     "term": "제22대",
     "name": "신장식",
     "party": "조국혁신당",
-    "committees": ["국회운영위원회", "정무위원회"],
+    "committees": [
+      "국회운영위원회",
+      "정무위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "shinjs6411@gmail.com"
   },
   {
+    "id": 154,
     "term": "제22대",
     "name": "신정훈",
     "party": "더불어민주당",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "전남",
     "district": "나주시화순군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "shinjh744@naver.com"
   },
   {
+    "id": 155,
     "term": "제22대",
     "name": "안규백",
     "party": "더불어민주당",
@@ -1803,141 +2426,198 @@
     "district": "동대문구갑",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "intoan429@gmail.com"
   },
   {
+    "id": 156,
     "term": "제22대",
     "name": "안도걸",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회", "예산결산특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회"
+    ],
     "city": "광주",
     "district": "동구남구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ahndogeol@naver.com"
   },
   {
+    "id": 157,
     "term": "제22대",
     "name": "안상훈",
     "party": "국민의힘",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "ash_0515@naver.com"
   },
   {
+    "id": 158,
     "term": "제22대",
     "name": "안철수",
     "party": "국민의힘",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "경기",
     "district": "성남시분당구갑",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "csahn435@gmail.com"
   },
   {
+    "id": 159,
     "term": "제22대",
     "name": "안태준",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "경기",
     "district": "광주시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "antagt@naver.com"
   },
   {
+    "id": 160,
     "term": "제22대",
     "name": "안호영",
     "party": "더불어민주당",
-    "committees": ["환경노동위원회"],
+    "committees": [
+      "환경노동위원회"
+    ],
     "city": "전북",
     "district": "완주군진안군무주군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ahnho065@gmail.com"
   },
   {
+    "id": 161,
     "term": "제22대",
     "name": "양문석",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회", "국회운영위원회"],
+    "committees": [
+      "문화체육관광위원회",
+      "국회운영위원회"
+    ],
     "city": "경기",
     "district": "안산시갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yangmunsuk7227@gmail.com"
   },
   {
+    "id": 162,
     "term": "제22대",
     "name": "양부남",
     "party": "더불어민주당",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "광주",
     "district": "서구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ybn733@naver.com"
   },
   {
+    "id": 163,
     "term": "제22대",
     "name": "어기구",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "충남",
     "district": "당진시",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kiyku@naver.com"
   },
   {
+    "id": 164,
     "term": "제22대",
     "name": "엄태영",
     "party": "국민의힘",
-    "committees": ["국토교통위원회", "예산결산특별위원회"],
+    "committees": [
+      "국토교통위원회",
+      "예산결산특별위원회"
+    ],
     "city": "충북",
     "district": "제천시단양군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "2040jd@gmail.com"
   },
   {
+    "id": 165,
     "term": "제22대",
     "name": "염태영",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회", "기후위기 특별위원회"],
+    "committees": [
+      "국토교통위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경기",
     "district": "수원시무",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "best1yty@gmail.com"
   },
   {
+    "id": 166,
     "term": "제22대",
     "name": "오기형",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회", "예산결산특별위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "서울",
     "district": "도봉구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "okhyung628@naver.com"
   },
   {
+    "id": 167,
     "term": "제22대",
     "name": "오세희",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회", "예산결산특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "예산결산특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "oshee0530@gmail.com"
   },
   {
+    "id": 168,
     "term": "제22대",
     "name": "용혜인",
     "party": "기본소득당",
@@ -1949,9 +2629,11 @@
     "district": "",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "hello@yonghyein.kr"
   },
   {
+    "id": 169,
     "term": "제22대",
     "name": "우원식",
     "party": "무소속",
@@ -1960,53 +2642,75 @@
     "district": "노원구갑",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "reform1-1@hanmail.net"
   },
   {
+    "id": 170,
     "term": "제22대",
     "name": "우재준",
     "party": "국민의힘",
-    "committees": ["환경노동위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "환경노동위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "대구",
     "district": "북구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "woooo617@naver.com"
   },
   {
+    "id": 171,
     "term": "제22대",
     "name": "위성곤",
     "party": "더불어민주당",
-    "committees": ["예산결산특별위원회", "행정안전위원회", "기후위기 특별위원회"],
+    "committees": [
+      "예산결산특별위원회",
+      "행정안전위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "제주",
     "district": "서귀포시",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "wishjeju@hanmail.net"
   },
   {
+    "id": 172,
     "term": "제22대",
     "name": "위성락",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회", "정보위원회"],
+    "committees": [
+      "외교통일위원회",
+      "정보위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "2024wisunglac@gmail.com"
   },
   {
+    "id": 173,
     "term": "제22대",
     "name": "유동수",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "인천",
     "district": "계양구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "newds61@naver.com"
   },
   {
+    "id": 174,
     "term": "제22대",
     "name": "유상범",
     "party": "국민의힘",
@@ -2018,9 +2722,11 @@
     "district": "홍천군횡성군영월군평창군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sbyoo64@naver.com"
   },
   {
+    "id": 175,
     "term": "제22대",
     "name": "유영하",
     "party": "국민의힘",
@@ -2033,9 +2739,11 @@
     "district": "달서구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "22yyh620@naver.com"
   },
   {
+    "id": 176,
     "term": "제22대",
     "name": "유용원",
     "party": "국민의힘",
@@ -2047,9 +2755,11 @@
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "bemil434@naver.com"
   },
   {
+    "id": 177,
     "term": "제22대",
     "name": "윤건영",
     "party": "더불어민주당",
@@ -2062,42 +2772,57 @@
     "district": "구로구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "younky926@gmail.com"
   },
   {
+    "id": 178,
     "term": "제22대",
     "name": "윤상현",
     "party": "국민의힘",
-    "committees": ["국방위원회"],
+    "committees": [
+      "국방위원회"
+    ],
     "city": "인천",
     "district": "동구미추홀구을",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "shyoon@na.go.kr"
   },
   {
+    "id": 179,
     "term": "제22대",
     "name": "윤영석",
     "party": "국민의힘",
-    "committees": ["국토교통위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "국토교통위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "경남",
     "district": "양산시갑",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "7844861@naver.com"
   },
   {
+    "id": 180,
     "term": "제22대",
     "name": "윤재옥",
     "party": "국민의힘",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "대구",
     "district": "달서구을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "7882579@naver.com"
   },
   {
+    "id": 181,
     "term": "제22대",
     "name": "윤종군",
     "party": "더불어민주당",
@@ -2110,119 +2835,165 @@
     "district": "안성시",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ayjk1101@gmail.com"
   },
   {
+    "id": 182,
     "term": "제22대",
     "name": "윤종오",
     "party": "진보당",
-    "committees": ["국토교통위원회", "예산결산특별위원회"],
+    "committees": [
+      "국토교통위원회",
+      "예산결산특별위원회"
+    ],
     "city": "울산",
     "district": "북구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yjongo428@gmail.com"
   },
   {
+    "id": 183,
     "term": "제22대",
     "name": "윤준병",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회", "예산결산특별위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회",
+      "예산결산특별위원회"
+    ],
     "city": "전북",
     "district": "정읍시고창군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yjb870053@naver.com"
   },
   {
+    "id": 184,
     "term": "제22대",
     "name": "윤한홍",
     "party": "국민의힘",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "경남",
     "district": "창원시마산회원구",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": ""
   },
   {
+    "id": 185,
     "term": "제22대",
     "name": "윤호중",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "경기",
     "district": "구리시",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hjyun9292@naver.com"
   },
   {
+    "id": 186,
     "term": "제22대",
     "name": "윤후덕",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회", "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"],
+    "committees": [
+      "외교통일위원회",
+      "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"
+    ],
     "city": "경기",
     "district": "파주시갑",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yoons609@hanmail.net"
   },
   {
+    "id": 187,
     "term": "제22대",
     "name": "이강일",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "충북",
     "district": "청주시상당구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "kilee905@naver.com"
   },
   {
+    "id": 188,
     "term": "제22대",
     "name": "이개호",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "전남",
     "district": "담양군함평군영광군장성군",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "7880291@naver.com"
   },
   {
+    "id": 189,
     "term": "제22대",
     "name": "이건태",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "경기",
     "district": "부천시병",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "mrleegt@gmail.com"
   },
   {
+    "id": 190,
     "term": "제22대",
     "name": "이광희",
     "party": "더불어민주당",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "충북",
     "district": "청주시서원구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "goanghee1@naver.com"
   },
   {
+    "id": 191,
     "term": "제22대",
     "name": "이기헌",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회", "정보위원회"],
+    "committees": [
+      "문화체육관광위원회",
+      "정보위원회"
+    ],
     "city": "경기",
     "district": "고양시병",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "lkh502503@gmail.com"
   },
   {
+    "id": 192,
     "term": "제22대",
     "name": "이달희",
     "party": "국민의힘",
@@ -2236,20 +3007,27 @@
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "dalhee621@naver.com"
   },
   {
+    "id": 193,
     "term": "제22대",
     "name": "이만희",
     "party": "국민의힘",
-    "committees": ["행정안전위원회", "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"],
+    "committees": [
+      "행정안전위원회",
+      "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"
+    ],
     "city": "경북",
     "district": "영천시청도군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yc20002@naver.com"
   },
   {
+    "id": 194,
     "term": "제22대",
     "name": "이병진",
     "party": "더불어민주당",
@@ -2261,9 +3039,11 @@
     "district": "평택시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ptgotogether@naver.com"
   },
   {
+    "id": 195,
     "term": "제22대",
     "name": "이상식",
     "party": "더불어민주당",
@@ -2275,20 +3055,26 @@
     "district": "용인시갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "leesang@assembly.go.kr"
   },
   {
+    "id": 196,
     "term": "제22대",
     "name": "이상휘",
     "party": "국민의힘",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "경북",
     "district": "포항시남구울릉군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "winner4011@naver.com"
   },
   {
+    "id": 197,
     "term": "제22대",
     "name": "이성권",
     "party": "국민의힘",
@@ -2301,31 +3087,43 @@
     "district": "사하구갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sahalsk1015@naver.com"
   },
   {
+    "id": 198,
     "term": "제22대",
     "name": "이성윤",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회"],
+    "committees": [
+      "법제사법위원회"
+    ],
     "city": "전북",
     "district": "전주시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "lsywin445@gmail.com"
   },
   {
+    "id": 199,
     "term": "제22대",
     "name": "이소영",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회", "국회운영위원회", "기후위기 특별위원회"],
+    "committees": [
+      "국토교통위원회",
+      "국회운영위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경기",
     "district": "의왕시과천시",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sylee0546@gmail.com"
   },
   {
+    "id": 200,
     "term": "제22대",
     "name": "이수진",
     "party": "더불어민주당",
@@ -2337,31 +3135,41 @@
     "district": "성남시중원구",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "leesj545@daum.net"
   },
   {
+    "id": 201,
     "term": "제22대",
     "name": "이양수",
     "party": "국민의힘",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "강원",
     "district": "속초시인제군고성군양양군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "2yangs6288@naver.com"
   },
   {
+    "id": 202,
     "term": "제22대",
     "name": "이언주",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "경기",
     "district": "용인시정",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "eonju5257@gmail.com"
   },
   {
+    "id": 203,
     "term": "제22대",
     "name": "이연희",
     "party": "더불어민주당",
@@ -2374,42 +3182,56 @@
     "district": "청주시흥덕구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yeonh2ee@gmail.com"
   },
   {
+    "id": 204,
     "term": "제22대",
     "name": "이용선",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "서울",
     "district": "양천구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yslee9282@naver.com"
   },
   {
+    "id": 205,
     "term": "제22대",
     "name": "이용우",
     "party": "더불어민주당",
-    "committees": ["환경노동위원회"],
+    "committees": [
+      "환경노동위원회"
+    ],
     "city": "인천",
     "district": "서구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "lywchosim@naver.com"
   },
   {
+    "id": 206,
     "term": "제22대",
     "name": "이원택",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "전북",
     "district": "군산시김제시부안군을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "we1taeg@daum.net"
   },
   {
+    "id": 207,
     "term": "제22대",
     "name": "이인선",
     "party": "국민의힘",
@@ -2422,229 +3244,316 @@
     "district": "수성구을",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "inseon0502@naver.com"
   },
   {
+    "id": 208,
     "term": "제22대",
     "name": "이인영",
     "party": "더불어민주당",
-    "committees": ["정무위원회", "정보위원회"],
+    "committees": [
+      "정무위원회",
+      "정보위원회"
+    ],
     "city": "서울",
     "district": "구로구갑",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "liy1964@empal.com"
   },
   {
+    "id": 209,
     "term": "제22대",
     "name": "이재강",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회", "예산결산특별위원회"],
+    "committees": [
+      "외교통일위원회",
+      "예산결산특별위원회"
+    ],
     "city": "경기",
     "district": "의정부시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jaeganglee@gmail.com"
   },
   {
+    "id": 210,
     "term": "제22대",
     "name": "이재관",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "충남",
     "district": "천안시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "minjoo_ljk0410@naver.com"
   },
   {
+    "id": 211,
     "term": "제22대",
     "name": "이재명",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "인천",
     "district": "계양구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ljm631000@assembly.go.kr"
   },
   {
+    "id": 212,
     "term": "제22대",
     "name": "이재정",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "경기",
     "district": "안양시동안구을",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "leejjlaw@gmail.com"
   },
   {
+    "id": 213,
     "term": "제22대",
     "name": "이정문",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "충남",
     "district": "천안시병",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ljm935@na.go.kr"
   },
   {
+    "id": 214,
     "term": "제22대",
     "name": "이정헌",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "서울",
     "district": "광진구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "532jhlee@gmail.com"
   },
   {
+    "id": 215,
     "term": "제22대",
     "name": "이종배",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "충북",
     "district": "충주시",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "victoryljb@naver.com"
   },
   {
+    "id": 216,
     "term": "제22대",
     "name": "이종욱",
     "party": "국민의힘",
-    "committees": ["기획재정위원회", "예산결산특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회"
+    ],
     "city": "경남",
     "district": "창원시진해구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jinhae.jump@gmail.com"
   },
   {
+    "id": 217,
     "term": "제22대",
     "name": "이주영",
     "party": "개혁신당",
-    "committees": ["보건복지위원회", "예산결산특별위원회"],
+    "committees": [
+      "보건복지위원회",
+      "예산결산특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "jylee_nrp@naver.com"
   },
   {
+    "id": 218,
     "term": "제22대",
     "name": "이준석",
     "party": "개혁신당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "경기",
     "district": "화성시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "j7840790@gmail.com"
   },
   {
+    "id": 219,
     "term": "제22대",
     "name": "이철규",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "강원",
     "district": "동해시태백시삼척시정선군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": ""
   },
   {
+    "id": 220,
     "term": "제22대",
     "name": "이춘석",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "전북",
     "district": "익산시갑",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "csa2418@naver.com"
   },
   {
+    "id": 221,
     "term": "제22대",
     "name": "이학영",
     "party": "더불어민주당",
-    "committees": ["환경노동위원회"],
+    "committees": [
+      "환경노동위원회"
+    ],
     "city": "경기",
     "district": "군포시",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "youngcamp1@gmail.com"
   },
   {
+    "id": 222,
     "term": "제22대",
     "name": "이해민",
     "party": "조국혁신당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "haimin@rebuildingk.kr"
   },
   {
+    "id": 223,
     "term": "제22대",
     "name": "이해식",
     "party": "더불어민주당",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "서울",
     "district": "강동구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "leehaesik1113@gmail.com"
   },
   {
+    "id": 224,
     "term": "제22대",
     "name": "이헌승",
     "party": "국민의힘",
-    "committees": ["정무위원회", "기후위기 특별위원회"],
+    "committees": [
+      "정무위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "부산",
     "district": "부산진구을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ilovebusanjin@hanmail.net"
   },
   {
+    "id": 225,
     "term": "제22대",
     "name": "이훈기",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "인천",
     "district": "남동구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hoongi2024@gmail.com"
   },
   {
+    "id": 226,
     "term": "제22대",
     "name": "인요한",
     "party": "국민의힘",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "yhassembly2024@naver.com"
   },
   {
+    "id": 227,
     "term": "제22대",
     "name": "임광현",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "limkhassembly@gmail.com"
   },
   {
+    "id": 228,
     "term": "제22대",
     "name": "임미애",
     "party": "더불어민주당",
@@ -2657,31 +3566,42 @@
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "326miae@gmail.com"
   },
   {
+    "id": 229,
     "term": "제22대",
     "name": "임오경",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회"],
+    "committees": [
+      "문화체육관광위원회"
+    ],
     "city": "경기",
     "district": "광명시갑",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "lok0415@hanmail.net"
   },
   {
+    "id": 230,
     "term": "제22대",
     "name": "임이자",
     "party": "국민의힘",
-    "committees": ["환경노동위원회", "기후위기 특별위원회"],
+    "committees": [
+      "환경노동위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경북",
     "district": "상주시문경시",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "llj11@daum.net"
   },
   {
+    "id": 231,
     "term": "제22대",
     "name": "임종득",
     "party": "국민의힘",
@@ -2694,20 +3614,27 @@
     "district": "영주시영양군봉화군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "bigmann64@naver.com"
   },
   {
+    "id": 232,
     "term": "제22대",
     "name": "임호선",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회", "예산결산특별위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회",
+      "예산결산특별위원회"
+    ],
     "city": "충북",
     "district": "증평군진천군음성군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "limhoseon2020@naver.com"
   },
   {
+    "id": 233,
     "term": "제22대",
     "name": "장경태",
     "party": "더불어민주당",
@@ -2721,9 +3648,11 @@
     "district": "동대문구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "letskt2020@gmail.com"
   },
   {
+    "id": 234,
     "term": "제22대",
     "name": "장동혁",
     "party": "국민의힘",
@@ -2736,31 +3665,43 @@
     "district": "보령시서천군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dh337dh@naver.com"
   },
   {
+    "id": 235,
     "term": "제22대",
     "name": "장종태",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "대전",
     "district": "서구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "changjt@naver.com"
   },
   {
+    "id": 236,
     "term": "제22대",
     "name": "장철민",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회", "여성가족위원회", "예산결산특별위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회",
+      "여성가족위원회",
+      "예산결산특별위원회"
+    ],
     "city": "대전",
     "district": "동구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jcm5440@gmail.com"
   },
   {
+    "id": 237,
     "term": "제22대",
     "name": "전용기",
     "party": "더불어민주당",
@@ -2773,31 +3714,42 @@
     "district": "화성시정",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "braveplane@gmail.com"
   },
   {
+    "id": 238,
     "term": "제22대",
     "name": "전재수",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회"],
+    "committees": [
+      "문화체육관광위원회"
+    ],
     "city": "부산",
     "district": "북구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "613jjs@gmail.com"
   },
   {
+    "id": 239,
     "term": "제22대",
     "name": "전종덕",
     "party": "진보당",
-    "committees": ["농림축산식품해양수산위원회", "연금개혁 특별위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회",
+      "연금개혁 특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "jeonjd7877@gmail.com"
   },
   {
+    "id": 240,
     "term": "제22대",
     "name": "전진숙",
     "party": "더불어민주당",
@@ -2810,31 +3762,41 @@
     "district": "북구을",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "518jjs@naver.com"
   },
   {
+    "id": 241,
     "term": "제22대",
     "name": "전현희",
     "party": "더불어민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "서울",
     "district": "중구성동구갑",
     "gender": "여",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sotong0743@gmail.com"
   },
   {
+    "id": 242,
     "term": "제22대",
     "name": "정동만",
     "party": "국민의힘",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "부산",
     "district": "기장군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "dongbu1538@naver.com"
   },
   {
+    "id": 243,
     "term": "제22대",
     "name": "정동영",
     "party": "더불어민주당",
@@ -2846,53 +3808,72 @@
     "district": "전주시병",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "cdypeace@hanmail.net"
   },
   {
+    "id": 244,
     "term": "제22대",
     "name": "정성국",
     "party": "국민의힘",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "부산",
     "district": "부산진구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "sungkook337@naver.com"
   },
   {
+    "id": 245,
     "term": "제22대",
     "name": "정성호",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "경기",
     "district": "동두천시양주시연천군갑",
     "gender": "남",
     "election_count": "5선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jsh35351@naver.com"
   },
   {
+    "id": 246,
     "term": "제22대",
     "name": "정연욱",
     "party": "국민의힘",
-    "committees": ["문화체육관광위원회", "예산결산특별위원회"],
+    "committees": [
+      "문화체육관광위원회",
+      "예산결산특별위원회"
+    ],
     "city": "부산",
     "district": "수영구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "assembly847@naver.com"
   },
   {
+    "id": 247,
     "term": "제22대",
     "name": "정을호",
     "party": "더불어민주당",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": " jungsdream24@gmail.com"
   },
   {
+    "id": 248,
     "term": "제22대",
     "name": "정일영",
     "party": "더불어민주당",
@@ -2905,20 +3886,26 @@
     "district": "연수구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "chung10park@naver.com"
   },
   {
+    "id": 249,
     "term": "제22대",
     "name": "정점식",
     "party": "국민의힘",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "경남",
     "district": "통영시고성군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jsjeong0403@naver.com"
   },
   {
+    "id": 250,
     "term": "제22대",
     "name": "정준호",
     "party": "더불어민주당",
@@ -2930,141 +3917,197 @@
     "district": "북구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jjhgj0503@naver.com"
   },
   {
+    "id": 251,
     "term": "제22대",
     "name": "정진욱",
     "party": "더불어민주당",
-    "committees": ["국회운영위원회", "산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "국회운영위원회",
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "광주",
     "district": "동구남구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "chungco518@gmail.com"
   },
   {
+    "id": 252,
     "term": "제22대",
     "name": "정청래",
     "party": "더불어민주당",
-    "committees": ["법제사법위원회"],
+    "committees": [
+      "법제사법위원회"
+    ],
     "city": "서울",
     "district": "마포구을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "ssaribi0415@naver.com"
   },
   {
+    "id": 253,
     "term": "제22대",
     "name": "정춘생",
     "party": "조국혁신당",
-    "committees": ["행정안전위원회", "여성가족위원회"],
+    "committees": [
+      "행정안전위원회",
+      "여성가족위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "saeng0425@rebuildingk.kr"
   },
   {
+    "id": 254,
     "term": "제22대",
     "name": "정태호",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "서울",
     "district": "관악구을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jth5073@gmail.com"
   },
   {
+    "id": 255,
     "term": "제22대",
     "name": "정혜경",
     "party": "진보당",
-    "committees": ["환경노동위원회"],
+    "committees": [
+      "환경노동위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "jhkjinbo@gmail.com"
   },
   {
+    "id": 256,
     "term": "제22대",
     "name": "정희용",
     "party": "국민의힘",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "경북",
     "district": "고령군성주군칠곡군",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "heeyong4you@naver.com"
   },
   {
+    "id": 257,
     "term": "제22대",
     "name": "조경태",
     "party": "국민의힘",
-    "committees": ["농림축산식품해양수산위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회"
+    ],
     "city": "부산",
     "district": "사하구을",
     "gender": "남",
     "election_count": "6선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yeskt@hanmail.net"
   },
   {
+    "id": 258,
     "term": "제22대",
     "name": "조계원",
     "party": "더불어민주당",
-    "committees": ["문화체육관광위원회"],
+    "committees": [
+      "문화체육관광위원회"
+    ],
     "city": "전남",
     "district": "여수시을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "gyewoncho@naver.com"
   },
   {
+    "id": 259,
     "term": "제22대",
     "name": "조배숙",
     "party": "국민의힘",
-    "committees": ["법제사법위원회", "예산결산특별위원회"],
+    "committees": [
+      "법제사법위원회",
+      "예산결산특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "5선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "victory_cho@naver.com"
   },
   {
+    "id": 260,
     "term": "제22대",
     "name": "조승래",
     "party": "더불어민주당",
-    "committees": ["국방위원회"],
+    "committees": [
+      "국방위원회"
+    ],
     "city": "대전",
     "district": "유성구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "yuseong0413@daum.net"
   },
   {
+    "id": 261,
     "term": "제22대",
     "name": "조승환",
     "party": "국민의힘",
-    "committees": ["행정안전위원회", "예산결산특별위원회"],
+    "committees": [
+      "행정안전위원회",
+      "예산결산특별위원회"
+    ],
     "city": "부산",
     "district": "중구영도구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "csh240410@naver.com"
   },
   {
+    "id": 262,
     "term": "제22대",
     "name": "조은희",
     "party": "국민의힘",
-    "committees": ["행정안전위원회", "여성가족위원회", "기후위기 특별위원회"],
+    "committees": [
+      "행정안전위원회",
+      "여성가족위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "서울",
     "district": "서초구갑",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "gracecho1@naver.com"
   },
   {
+    "id": 263,
     "term": "제22대",
     "name": "조인철",
     "party": "더불어민주당",
@@ -3076,42 +4119,59 @@
     "district": "서구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "2024iccho@gmail.com"
   },
   {
+    "id": 264,
     "term": "제22대",
     "name": "조정식",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회"],
+    "committees": [
+      "외교통일위원회"
+    ],
     "city": "경기",
     "district": "시흥시을",
     "gender": "남",
     "election_count": "6선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "7842760@naver.com"
   },
   {
+    "id": 265,
     "term": "제22대",
     "name": "조정훈",
     "party": "국민의힘",
-    "committees": ["교육위원회", "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"],
+    "committees": [
+      "교육위원회",
+      "2025 아시아태평양경제협력체(APEC) 정상회의 지원 특별위원회"
+    ],
     "city": "서울",
     "district": "마포구갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "mapo_cho@naver.com"
   },
   {
+    "id": 266,
     "term": "제22대",
     "name": "조지연",
     "party": "국민의힘",
-    "committees": ["환경노동위원회", "예산결산특별위원회", "기후위기 특별위원회"],
+    "committees": [
+      "환경노동위원회",
+      "예산결산특별위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경북",
     "district": "경산시",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jiyeonwecan@naver.com"
   },
   {
+    "id": 267,
     "term": "제22대",
     "name": "주진우",
     "party": "국민의힘",
@@ -3125,196 +4185,272 @@
     "district": "해운대구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "joo_jinwoo@naver.com"
   },
   {
+    "id": 268,
     "term": "제22대",
     "name": "주철현",
     "party": "더불어민주당",
-    "committees": ["농림축산식품해양수산위원회", "예산결산특별위원회"],
+    "committees": [
+      "농림축산식품해양수산위원회",
+      "예산결산특별위원회"
+    ],
     "city": "전남",
     "district": "여수시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jassembly536@gmail.com"
   },
   {
+    "id": 269,
     "term": "제22대",
     "name": "주호영",
     "party": "국민의힘",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "대구",
     "district": "수성구갑",
     "gender": "남",
     "election_count": "6선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "7842055@naver.com"
   },
   {
+    "id": 270,
     "term": "제22대",
     "name": "진선미",
     "party": "더불어민주당",
-    "committees": ["교육위원회"],
+    "committees": [
+      "교육위원회"
+    ],
     "city": "서울",
     "district": "강동구갑",
     "gender": "여",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "smjingogo@gmail.com"
   },
   {
+    "id": 271,
     "term": "제22대",
     "name": "진성준",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "서울",
     "district": "강서구을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hotjjoon@gmail.com"
   },
   {
+    "id": 272,
     "term": "제22대",
     "name": "진종오",
     "party": "국민의힘",
-    "committees": ["문화체육관광위원회"],
+    "committees": [
+      "문화체육관광위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "jinjongoh.official@gmail.com"
   },
   {
+    "id": 273,
     "term": "제22대",
     "name": "차규근",
     "party": "조국혁신당",
-    "committees": ["기획재정위원회", "예산결산특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "ontoincha22@gmail.com"
   },
   {
+    "id": 274,
     "term": "제22대",
     "name": "차지호",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회", "기후위기 특별위원회"],
+    "committees": [
+      "외교통일위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "경기",
     "district": "오산시",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "chajiho5301@gmail.com"
   },
   {
+    "id": 275,
     "term": "제22대",
     "name": "채현일",
     "party": "더불어민주당",
-    "committees": ["행정안전위원회"],
+    "committees": [
+      "행정안전위원회"
+    ],
     "city": "서울",
     "district": "영등포구갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "chhi.address@gmail.com"
   },
   {
+    "id": 276,
     "term": "제22대",
     "name": "천준호",
     "party": "더불어민주당",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "서울",
     "district": "강북구갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jskshare2020@gmail.com"
   },
   {
+    "id": 277,
     "term": "제22대",
     "name": "천하람",
     "party": "개혁신당",
-    "committees": ["국회운영위원회", "기획재정위원회"],
+    "committees": [
+      "국회운영위원회",
+      "기획재정위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "team1000haram@gmail.com"
   },
   {
+    "id": 278,
     "term": "제22대",
     "name": "최기상",
     "party": "더불어민주당",
-    "committees": ["기획재정위원회"],
+    "committees": [
+      "기획재정위원회"
+    ],
     "city": "서울",
     "district": "금천구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "choiwakeup@gmail.com"
   },
   {
+    "id": 279,
     "term": "제22대",
     "name": "최민희",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "경기",
     "district": "남양주시갑",
     "gender": "여",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "choimh867@gmail.com"
   },
   {
+    "id": 280,
     "term": "제22대",
     "name": "최보윤",
     "party": "국민의힘",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "law@bychoi.com"
   },
   {
+    "id": 281,
     "term": "제22대",
     "name": "최수진",
     "party": "국민의힘",
-    "committees": ["과학기술정보방송통신위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "mp_sj322@naver.com"
   },
   {
+    "id": 282,
     "term": "제22대",
     "name": "최은석",
     "party": "국민의힘",
-    "committees": ["기획재정위원회", "예산결산특별위원회"],
+    "committees": [
+      "기획재정위원회",
+      "예산결산특별위원회"
+    ],
     "city": "대구",
     "district": "동구군위군갑",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "cesof@naver.com"
   },
   {
+    "id": 283,
     "term": "제22대",
     "name": "최형두",
     "party": "국민의힘",
-    "committees": ["과학기술정보방송통신위원회", "예산결산특별위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회",
+      "예산결산특별위원회"
+    ],
     "city": "경남",
     "district": "창원시마산합포구",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "happyhappo@naver.com"
   },
   {
+    "id": 284,
     "term": "제22대",
     "name": "추경호",
     "party": "국민의힘",
-    "committees": ["보건복지위원회"],
+    "committees": [
+      "보건복지위원회"
+    ],
     "city": "대구",
     "district": "달성군",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "khchoo@assembly.go.kr"
   },
   {
+    "id": 285,
     "term": "제22대",
     "name": "추미애",
     "party": "더불어민주당",
@@ -3327,9 +4463,11 @@
     "district": "하남시갑",
     "gender": "여",
     "election_count": "6선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "choo_world@naver.com"
   },
   {
+    "id": 286,
     "term": "제22대",
     "name": "한기호",
     "party": "국민의힘",
@@ -3342,20 +4480,27 @@
     "district": "춘천시철원군화천군양구군을",
     "gender": "남",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": ""
   },
   {
+    "id": 287,
     "term": "제22대",
     "name": "한민수",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회", "예산결산특별위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회",
+      "예산결산특별위원회"
+    ],
     "city": "서울",
     "district": "강북구을",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hmsgb2024@gmail.com"
   },
   {
+    "id": 288,
     "term": "제22대",
     "name": "한병도",
     "party": "더불어민주당",
@@ -3367,53 +4512,73 @@
     "district": "익산시을",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "1bddoit@gmail.com"
   },
   {
+    "id": 289,
     "term": "제22대",
     "name": "한정애",
     "party": "더불어민주당",
-    "committees": ["외교통일위원회", "기후위기 특별위원회"],
+    "committees": [
+      "외교통일위원회",
+      "기후위기 특별위원회"
+    ],
     "city": "서울",
     "district": "강서구병",
     "gender": "여",
     "election_count": "4선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jeoung@gmail.com"
   },
   {
+    "id": 290,
     "term": "제22대",
     "name": "한준호",
     "party": "더불어민주당",
-    "committees": ["국토교통위원회"],
+    "committees": [
+      "국토교통위원회"
+    ],
     "city": "경기",
     "district": "고양시을",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "juno.news2020@gmail.com"
   },
   {
+    "id": 291,
     "term": "제22대",
     "name": "한지아",
     "party": "국민의힘",
-    "committees": ["보건복지위원회", "여성가족위원회"],
+    "committees": [
+      "보건복지위원회",
+      "여성가족위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "zeeahan635@gmail.com"
   },
   {
+    "id": 292,
     "term": "제22대",
     "name": "한창민",
     "party": "사회민주당",
-    "committees": ["정무위원회"],
+    "committees": [
+      "정무위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "saminhcm@gmail.com"
   },
   {
+    "id": 293,
     "term": "제22대",
     "name": "허성무",
     "party": "더불어민주당",
@@ -3426,31 +4591,42 @@
     "district": "창원시성산구",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "huhsmsm@naver.com"
   },
   {
+    "id": 294,
     "term": "제22대",
     "name": "허영",
     "party": "더불어민주당",
-    "committees": ["국방위원회", "예산결산특별위원회"],
+    "committees": [
+      "국방위원회",
+      "예산결산특별위원회"
+    ],
     "city": "강원",
     "district": "춘천시철원군화천군양구군갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "successhuh@gmail.com"
   },
   {
+    "id": 295,
     "term": "제22대",
     "name": "허종식",
     "party": "더불어민주당",
-    "committees": ["산업통상자원중소벤처기업위원회"],
+    "committees": [
+      "산업통상자원중소벤처기업위원회"
+    ],
     "city": "인천",
     "district": "동구미추홀구갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "jongsyy@naver.com"
   },
   {
+    "id": 296,
     "term": "제22대",
     "name": "홍기원",
     "party": "더불어민주당",
@@ -3463,9 +4639,11 @@
     "district": "평택시갑",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "flyhong21@naver.com"
   },
   {
+    "id": 297,
     "term": "제22대",
     "name": "황명선",
     "party": "더불어민주당",
@@ -3477,39 +4655,54 @@
     "district": "논산시계룡시금산군",
     "gender": "남",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hwangms0@naver.com"
   },
   {
+    "id": 298,
     "term": "제22대",
     "name": "황운하",
     "party": "조국혁신당",
-    "committees": ["국토교통위원회", "예산결산특별위원회"],
+    "committees": [
+      "국토교통위원회",
+      "예산결산특별위원회"
+    ],
     "city": "비례대표",
     "district": "",
     "gender": "남",
     "election_count": "재선",
-    "election_method": "비례대표"
+    "election_method": "비례대표",
+    "email": "unhah0301@gmail.com"
   },
   {
+    "id": 299,
     "term": "제22대",
     "name": "황정아",
     "party": "더불어민주당",
-    "committees": ["과학기술정보방송통신위원회", "예산결산특별위원회"],
+    "committees": [
+      "과학기술정보방송통신위원회",
+      "예산결산특별위원회"
+    ],
     "city": "대전",
     "district": "유성구을",
     "gender": "여",
     "election_count": "초선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hwang_0410@naver.com"
   },
   {
+    "id": 300,
     "term": "제22대",
     "name": "황희",
     "party": "더불어민주당",
-    "committees": ["국방위원회"],
+    "committees": [
+      "국방위원회"
+    ],
     "city": "서울",
     "district": "양천구갑",
     "gender": "남",
     "election_count": "3선",
-    "election_method": "지역구"
+    "election_method": "지역구",
+    "email": "hwanghee6728@gmail.com"
   }
 ]

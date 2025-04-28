@@ -1,3 +1,8 @@
+import { Member } from '@/types/members';
+import membersData from '@/data/members.json';
+
+export const MEMBERS: Member[] = membersData;
+
 export const MEMBER_CONSTANTS = {
   SEARCH: {
     PLACEHOLDER: '이름으로 검색',
@@ -32,8 +37,7 @@ export const MEMBER_CONSTANTS = {
     NO_RESULTS: '검색 결과가 없습니다.',
   },
   MAIN_PAGE: {
-    TITLE: 'SKT 개인정보 유출 사건 국민행동',
-    DESCRIPTION:
-      'SKT 개인정보 유출 사건에 대한 국민의 목소리를 전달하기 위해 국회의원들에게 항의 메일을 보낼 수 있습니다. 아래에서 지역구나 소속 정당 등으로 국회의원을 찾아보세요.',
+    TITLE: '국회의원 선택',
+    DESCRIPTION: '이메일을 보낼 국회의원을 선택해주세요. (최대 300명)',
   },
 } as const;

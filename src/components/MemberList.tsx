@@ -91,11 +91,13 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
   const handleMemberClick = (member: Member) => {
     setSelectedMembers((prev) => {
       const isSelected = prev.some((m) => m.id === member.id);
-      const newSelection = isSelected ? prev.filter((m) => m.id !== member.id) : [...prev, member];
-      onSelectionChange(newSelection);
-      return newSelection;
+      return isSelected ? prev.filter((m) => m.id !== member.id) : [...prev, member];
     });
   };
+
+  useEffect(() => {
+    onSelectionChange(selectedMembers);
+  }, [selectedMembers, onSelectionChange]);
 
   const handleNext = () => {
     if (selectedMembers.length === 0) return;

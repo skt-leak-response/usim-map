@@ -25,26 +25,29 @@ export async function POST(request: Request) {
     };
 
     // 선택된 템플릿 정보
-    const { title, description, solution } = EMAIL_TEMPLATES[templateKey];
+    const { title, description, solution, finish } = EMAIL_TEMPLATES[templateKey];
 
     const systemPrompt = `
   당신은 사용자가 국회의원에게 보내는 메일을 대신 작성하는 역할입니다.
   다음은 예시 템플릿입니다.
   
   <Example>
-  제목: ${title}
   
   현안 설명:
   ${description}
   
   해결책 제안:
   ${solution}
+  
+  마무리 인사:
+  ${finish}
   </Example>
   
   위 예시처럼, 사용자가 입력한 정보를 바탕으로 구조화된 메일을 작성하세요.
   `;
 
     const userPrompt = `
+    제목 : ${title}
   A (자기소개): ${introduction}
   B (요청사항): ${userRequest}
   
@@ -52,6 +55,9 @@ export async function POST(request: Request) {
   - 만약 A가 비어 있을 경우, 발신자는 '시민'으로 가정하여 작성하세요.
   - 만약 B가 비어 있을 경우, 예시 템플릿의 현안 설명과 해결책 제안을 그대로 활용하세요.
   - 어림짐작하거나 존재하지 않는 이름을 지어내지 마세요.
+  
+  **출력 형식 지시**  
+  - 마크다운 문법을 사용하여 번호 매기기(1., 2., …)와 빈 줄 단락 구분을 적용해주세요.  
 
   위 A, B와 예시 템플릿을 참고하여,
   • 시작 인사

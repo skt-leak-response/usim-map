@@ -199,9 +199,27 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                   <Card>
                     <CardContent className="p-4 whitespace-pre-wrap">
                       <div className="mb-4">
-                        <span className="font-semibold">제목:</span> [{issue}]
+                        <div className="flex items-center space-x-2">
+                          <Label htmlFor="issuePreview" className="whitespace-nowrap ">
+                            제목
+                          </Label>
+                          <Input
+                            id="issuePreview"
+                            value={issue}
+                            onChange={(e) => setIssue(e.target.value)}
+                            className="flex-1 border-none focus:border-none"
+                            placeholder="제목을 입력하세요"
+                          />
+                        </div>
                       </div>
-                      <div className="whitespace-pre-wrap">{content}</div>
+                      <Textarea
+                        id="contentPreview"
+                        rows={6}
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        className="border-none focus:border-none h-full resize-none h-[50vh]"
+                        placeholder="본문을 입력하세요"
+                      />
                     </CardContent>
                   </Card>
                 </div>

@@ -50,9 +50,7 @@ export function useEmail({ selectedMembers }: UseEmailProps) {
       const { email } = await res.json();
       if (email) {
         const lines = email.split('\n').filter((l: string) => l.trim() !== '');
-        const first = lines.shift()!;
-        setIssue(first.replace(/^제목[:\-\s]*/i, '').trim());
-        setContent(lines.join('\n').trim());
+        setContent(lines.join('\n\n').trim());
       }
     } catch (err) {
       console.error(err);

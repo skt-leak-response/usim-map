@@ -9,6 +9,7 @@ import { EmailFields } from './EmailFields';
 import { EmailPreview } from './EmailPreview';
 import { EmailSendButtons } from './EmailSendButtons';
 import { EmailGuideModal } from './EmailGuideModal';
+import { EmailAIForm } from './EmailAIForm';
 import { Card, CardContent } from '@/components/ui/card';
 import { useEmailForm } from '@/hooks/useEmailForm';
 import { Member } from '@/types/members';
@@ -50,6 +51,20 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 currentBatch={form.currentBatch}
                 setCurrentBatch={form.setCurrentBatch}
               />
+              <ErrorBoundary>
+                <Suspense fallback={<div>AI 폼 로딩 중...</div>}>
+                  <EmailAIForm
+                    template={form.template}
+                    setTemplate={form.setTemplate}
+                    intro={form.intro}
+                    setIntro={form.setIntro}
+                    userReq={form.userReq}
+                    setUserReq={form.setUserReq}
+                    loadingAI={form.loadingAI}
+                    generateEmail={form.generateEmail}
+                  />
+                </Suspense>
+              </ErrorBoundary>
               <ErrorBoundary>
                 <Suspense fallback={<div>입력 필드 로딩 중...</div>}>
                   <EmailFields

@@ -10,12 +10,20 @@ export function useEmailForm(selectedMembers: Member[]) {
   const [copiedBcc, setCopiedBcc] = useState(false);
 
   const {
+    template,
+    setTemplate,
     issue,
     setIssue,
     content,
     setContent,
     senderName,
     setSenderName,
+    intro,
+    setIntro,
+    userReq,
+    setUserReq,
+    loadingAI,
+    generateEmail,
     showCopyToast,
     currentBatch,
     setCurrentBatch,
@@ -79,5 +87,14 @@ export function useEmailForm(selectedMembers: Member[]) {
     getMailtoUrl,
     handleCopy,
     isMobile: isMobile(),
+    // AI-related props
+    template,
+    setTemplate,
+    intro,
+    setIntro,
+    userReq,
+    setUserReq,
+    loadingAI,
+    generateEmail,
   };
 }

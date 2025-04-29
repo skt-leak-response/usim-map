@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { MEMBERS } from '@/constants/members';
-import EmailForm from '@/components/EmailForm';
+
 import { Member } from '@/types/members';
 import { decodeIds } from '@/utils/encoding';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EmailForm from '@/components/EmailForm/index';
 
 export default function EmailPage() {
   const router = useRouter();

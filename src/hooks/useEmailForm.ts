@@ -17,8 +17,6 @@ export function useEmailForm(selectedMembers: Member[]) {
     setIssue,
     content,
     setContent,
-    senderName,
-    setSenderName,
     intro,
     setIntro,
     userReq,
@@ -91,8 +89,7 @@ export function useEmailForm(selectedMembers: Member[]) {
     setIssue,
     content,
     setContent,
-    senderName,
-    setSenderName,
+
     showCopyToast,
     currentBatch,
     setCurrentBatch,

@@ -38,22 +38,6 @@ export function EmailAIForm({
   return (
     <div className="space-y-4">
       <div>
-        <Label htmlFor="template">템플릿 선택</Label>
-        <Select value={template} onValueChange={(value) => setTemplate(value as TemplateKey)}>
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="템플릿을 선택하세요" />
-          </SelectTrigger>
-          <SelectContent>
-            {Object.entries(EMAIL_TEMPLATES).map(([key, { title }]) => (
-              <SelectItem key={key} value={key}>
-                {title}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-
-      <div>
         <Label htmlFor="intro">보내는 사람 소개 (선택사항)</Label>
         <Input
           id="intro"

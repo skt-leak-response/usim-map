@@ -14,7 +14,6 @@ export function useEmail({ selectedMembers }: UseEmailProps) {
   const [template, setTemplate] = useState<TemplateKey>('SKT_USIM');
   const [issue, setIssue] = useState<string>(EMAIL_TEMPLATES.SKT_USIM.title);
   const [content, setContent] = useState<string>('');
-  const [senderName, setSenderName] = useState('');
   const [showCopyToast, setShowCopyToast] = useState(false);
   const [currentBatch, setCurrentBatch] = useState(0);
 
@@ -33,21 +32,6 @@ ${EMAIL_TEMPLATES[template].finish}`;
     setContent(baseContent);
   }, [template]);
 
-  // 보내는 사람 이름이 변경될 때 content의 마지막 서명을 업데이트
-  useEffect(() => {
-    if (content) {
-      const lines = content.split('\n');
-      const lastLine = lines[lines.length - 1].trim();
-
-      // 마지막 줄이 "올림"으로 끝나는 경우에만 업데이트
-      if (lastLine.endsWith('올림')) {
-        const newSignature = senderName ? `${senderName} 올림` : '시민 올림';
-        lines[lines.length - 1] = newSignature;
-        setContent(lines.join('\n'));
-      }
-    }
-  }, [senderName]);
-
   const BATCH_SIZE = 50;
   const totalBatches = Math.ceil(selectedMembers.length / BATCH_SIZE);
   const currentMembers = selectedMembers.slice(
@@ -56,25 +40,36 @@ ${EMAIL_TEMPLATES[template].finish}`;
   );
 
   const generateEmail = async () => {
-    setLoadingAI(true);
     try {
-      const res = await fetch('/api/generateEmail', {
+      setLoadingAI(true);
+      const response = await fetch('/api/generateEmail', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           templateKey: template,
           introduction: intro,
           userRequest: userReq,
         }),
       });
-      const { email } = await res.json();
-      if (email) {
-        const lines = email.split('\n').filter((l: string) => l.trim() !== '');
-        setContent(lines.join('\n\n').trim());
+
+      if (!response.ok) {
+        throw new Error('Failed to generate email');
       }
-    } catch (err) {
-      console.error(err);
-      alert('메일 생성에 실패했습니다.');
+
+      const data = await response.json();
+      const email = data.email;
+
+      // 제목과 본문 분리
+      const lines = email.split('\n');
+      const title = lines[0].trim().replace('제목 :', '').trim();
+      const content = lines.slice(1).join('\n').trim();
+
+      setIssue(title);
+      setContent(content);
+    } catch (error) {
+      console.error('Error generating email:', error);
     } finally {
       setLoadingAI(false);
     }
@@ -84,25 +79,35 @@ ${EMAIL_TEMPLATES[template].finish}`;
     const subject = `[${issue}]`;
     const body = content;
 
-    // 모든 이메일을 BCC로 설정
+    // 모든 이메일을 BCC로 설정하고 이메일 주소 처리
     const bccEmails = [
-      ...currentMembers.map((member) => member.email),
+      ...currentMembers.map((member) => {
+        // 이메일 주소에서 괄호 내용 제거 및 슬래시로 구분된 주소 처리
+        const cleanEmail = member.email
+          ?.replace(/\s*\([^)]*\)/g, '') // 괄호와 그 안의 내용 제거
+          ?.split('/') // 슬래시로 구분된 주소 분리
+          ?.map((e) => e.trim()) // 각 주소 앞뒤 공백 제거
+          ?.filter((e) => e.length > 0)[0]; // 빈 문자열 제거하고 첫 번째 주소만 사용
+        return cleanEmail;
+      }),
       'response.skt.leak@gmail.com',
-    ].join(',');
+    ].filter(Boolean); // null이나 undefined 제거
 
     switch (provider) {
       case 'gmail':
-        return `https://mail.google.com/mail/?view=cm&fs=1&bcc=${bccEmails}&su=${encodeURIComponent(
-          subject,
-        )}&body=${encodeURIComponent(body)}`;
+        // Gmail용 URL 생성 - 이메일 주소를 콤마로 구분
+        const encodedBcc = encodeURIComponent(bccEmails.join(','));
+        const encodedSubject = encodeURIComponent(subject);
+        const encodedBody = encodeURIComponent(body);
+        return `https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&bcc=${encodedBcc}&su=${encodedSubject}&body=${encodedBody}`;
       case 'outlook':
-        return `https://outlook.live.com/mail/0/deeplink/compose?bcc=${bccEmails}&subject=${encodeURIComponent(
-          subject,
-        )}&body=${encodeURIComponent(body)}`;
+        return `https://outlook.live.com/mail/0/deeplink/compose?bcc=${bccEmails.join(
+          ',',
+        )}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       case 'naver':
-        return `https://mail.naver.com/compose?bcc=${bccEmails}&subject=${encodeURIComponent(
-          subject,
-        )}&body=${encodeURIComponent(body)}`;
+        return `https://mail.naver.com/compose?bcc=${bccEmails.join(
+          ',',
+        )}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       default:
         return '';
     }
@@ -121,8 +126,7 @@ ${EMAIL_TEMPLATES[template].finish}`;
     setIssue,
     content,
     setContent,
-    senderName,
-    setSenderName,
+
     intro,
     setIntro,
     userReq,

@@ -5,49 +5,33 @@ import React from 'react';
 
 interface EmailFieldsProps {
   issue: string;
-  setIssue: (v: string) => void;
+  setIssue: (issue: string) => void;
   content: string;
-  setContent: (v: string) => void;
-  senderName: string;
-  setSenderName: (v: string) => void;
+  setContent: (content: string) => void;
 }
 
-export function EmailFields({
-  issue,
-  setIssue,
-  content,
-  setContent,
-  senderName,
-  setSenderName,
-}: EmailFieldsProps) {
+export function EmailFields({ issue, setIssue, content, setContent }: EmailFieldsProps) {
   return (
-    <>
+    <div className="space-y-4">
       <div>
         <Label htmlFor="issue">제목</Label>
         <Input
           id="issue"
           value={issue}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIssue(e.target.value)}
+          onChange={(e) => setIssue(e.target.value)}
+          placeholder="이메일 제목을 입력하세요"
         />
       </div>
       <div>
-        <Label htmlFor="content">내용</Label>
+        <Label htmlFor="content">본문</Label>
         <Textarea
           id="content"
           value={content}
-          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setContent(e.target.value)}
-          rows={6}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="이메일 본문을 입력하세요"
+          className="min-h-[200px]"
         />
       </div>
-      <div>
-        <Label htmlFor="senderName">보내는 사람 이름 (선택사항)</Label>
-        <Input
-          id="senderName"
-          value={senderName}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSenderName(e.target.value)}
-          placeholder="이름을 입력하지 않으면 '시민'으로 표시됩니다"
-        />
-      </div>
-    </>
+    </div>
   );
 }

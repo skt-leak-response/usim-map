@@ -64,8 +64,6 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                     setIssue={form.setIssue}
                     content={form.content}
                     setContent={form.setContent}
-                    senderName={form.senderName}
-                    setSenderName={form.setSenderName}
                     // Common props
                     isMobile={form.isMobile}
                     getEmailUrl={form.getEmailUrl}

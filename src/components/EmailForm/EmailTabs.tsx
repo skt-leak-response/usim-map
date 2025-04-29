@@ -6,6 +6,19 @@ import { EmailSendButtons } from './EmailSendButtons';
 import { EmailGuideModal } from './EmailGuideModal';
 import { Member } from '@/types/members';
 import { TemplateKey } from '@/hooks/useEmail';
+import { useState } from 'react';
+import { EMAIL_TEMPLATES } from '@/constants/email';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+  SelectGroup,
+  SelectLabel,
+} from '@/components/ui/select';
+import { Label } from '@radix-ui/react-select';
+import { Input } from '@/components/ui/input';
 
 interface EmailTabsProps {
   // AI Form props
@@ -23,8 +36,6 @@ interface EmailTabsProps {
   setIssue: (issue: string) => void;
   content: string;
   setContent: (content: string) => void;
-  senderName: string;
-  setSenderName: (senderName: string) => void;
 
   // Common props
   isMobile: boolean;
@@ -62,8 +73,6 @@ export function EmailTabs({
   setIssue,
   content,
   setContent,
-  senderName,
-  setSenderName,
 
   // Common props
   isMobile,
@@ -84,58 +93,68 @@ export function EmailTabs({
   subjectValue,
   currentMembers,
 }: EmailTabsProps) {
+  const [activeTab, setActiveTab] = useState('intro');
+  const [showTemplateModal, setShowTemplateModal] = useState(false);
+
+  const tabs = [
+    { id: 'intro', label: '발신자 소개' },
+    { id: 'request', label: '요구사항' },
+    ...(template !== 'FREE_FORMAT' ? [{ id: 'content', label: '컨텐츠 추가' }] : []),
+  ];
+
   return (
-    <Tabs defaultValue="ai" className="w-full">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="ai">AI로 생성하기</TabsTrigger>
-        <TabsTrigger value="template">직접 메일 컨텐츠 수정하기</TabsTrigger>
-      </TabsList>
-      <TabsContent value="ai" className="space-y-6">
-        <EmailAIForm
-          template={template}
-          setTemplate={setTemplate}
-          intro={intro}
-          setIntro={setIntro}
-          userReq={userReq}
-          setUserReq={setUserReq}
-          loadingAI={loadingAI}
-          generateEmail={generateEmail}
-        />
-        <EmailPreview
-          issue={issue}
-          formattedContent={content}
-          copyToClipboard={copyToClipboard}
-          senderName={senderName}
-        />
-        <EmailSendButtons
-          isMobile={isMobile}
-          getEmailUrl={getEmailUrl}
-          getMailtoUrl={getMailtoUrl}
-          onGuideClick={onGuideClick}
-        />
-      </TabsContent>
-      <TabsContent value="template" className="space-y-6">
-        <EmailFields
-          issue={issue}
-          setIssue={setIssue}
-          content={content}
-          setContent={setContent}
-          senderName={senderName}
-          setSenderName={setSenderName}
-        />
-        <EmailPreview
-          issue={issue}
-          formattedContent={content}
-          copyToClipboard={copyToClipboard}
-          senderName={senderName}
-        />
-        <EmailSendButtons
-          isMobile={isMobile}
-          getEmailUrl={getEmailUrl}
-          getMailtoUrl={getMailtoUrl}
-          onGuideClick={onGuideClick}
-        />
-      </TabsContent>
+    <div className="space-y-6">
+      <p className="mb-[-1rem]">템플릿 선택</p>
+      <Select value={template} onValueChange={(value) => setTemplate(value as TemplateKey)}>
+        <SelectTrigger>
+          <SelectValue placeholder="템플릿을 선택하세요" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectItem value="SKT_USIM">{EMAIL_TEMPLATES.SKT_USIM.name}</SelectItem>
+            <SelectItem value="FREE_FORMAT">{EMAIL_TEMPLATES.FREE_FORMAT.name}</SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+
+      <Tabs defaultValue="ai" className="w-full">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="ai">AI로 생성하기</TabsTrigger>
+          <TabsTrigger value="template">직접 메일 컨텐츠 수정하기</TabsTrigger>
+        </TabsList>
+        <TabsContent value="ai" className="space-y-6">
+          <EmailAIForm
+            template={template}
+            setTemplate={setTemplate}
+            intro={intro}
+            setIntro={setIntro}
+            userReq={userReq}
+            setUserReq={setUserReq}
+            loadingAI={loadingAI}
+            generateEmail={generateEmail}
+          />
+        </TabsContent>
+        <TabsContent value="template" className="space-y-6">
+          <EmailFields
+            issue={issue}
+            setIssue={setIssue}
+            content={content}
+            setContent={setContent}
+          />
+        </TabsContent>
+      </Tabs>
+
+      <div className="mt-8">
+        <EmailPreview formattedContent={content} issue={issue} />
+      </div>
+
+      <EmailSendButtons
+        isMobile={isMobile}
+        getEmailUrl={getEmailUrl}
+        getMailtoUrl={getMailtoUrl}
+        onGuideClick={onGuideClick}
+      />
+
       <EmailGuideModal
         open={showGuideModal}
         onClose={() => setShowGuideModal(false)}
@@ -149,6 +168,6 @@ export function EmailTabs({
         contentValue={contentValue}
         subjectValue={subjectValue}
       />
-    </Tabs>
+    </div>
   );
 }

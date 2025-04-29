@@ -5,11 +5,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { EmailRecipientsToggle } from './EmailRecipientsToggle';
 import { EmailBatchAlert } from './EmailBatchAlert';
 import { EmailBatchSelector } from './EmailBatchSelector';
-import { EmailFields } from './EmailFields';
-import { EmailPreview } from './EmailPreview';
-import { EmailSendButtons } from './EmailSendButtons';
-import { EmailGuideModal } from './EmailGuideModal';
-import { EmailAIForm } from './EmailAIForm';
+import { EmailTabs } from './EmailTabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { useEmailForm } from '@/hooks/useEmailForm';
 import { Member } from '@/types/members';
@@ -52,8 +48,9 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                 setCurrentBatch={form.setCurrentBatch}
               />
               <ErrorBoundary>
-                <Suspense fallback={<div>AI 폼 로딩 중...</div>}>
-                  <EmailAIForm
+                <Suspense fallback={<div>이메일 폼 로딩 중...</div>}>
+                  <EmailTabs
+                    // AI Form props
                     template={form.template}
                     setTemplate={form.setTemplate}
                     intro={form.intro}
@@ -62,64 +59,48 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                     setUserReq={form.setUserReq}
                     loadingAI={form.loadingAI}
                     generateEmail={form.generateEmail}
-                  />
-                </Suspense>
-              </ErrorBoundary>
-              <ErrorBoundary>
-                <Suspense fallback={<div>입력 필드 로딩 중...</div>}>
-                  <EmailFields
+                    // Email Fields props
                     issue={form.issue}
                     setIssue={form.setIssue}
                     content={form.content}
                     setContent={form.setContent}
                     senderName={form.senderName}
                     setSenderName={form.setSenderName}
-                  />
-                </Suspense>
-              </ErrorBoundary>
-              <ErrorBoundary>
-                <Suspense fallback={<div>미리보기 로딩 중...</div>}>
-                  <EmailPreview
-                    issue={form.issue}
-                    formattedContent={form.content}
+                    // Common props
+                    isMobile={form.isMobile}
+                    getEmailUrl={form.getEmailUrl}
+                    getMailtoUrl={form.getMailtoUrl}
+                    onGuideClick={() => {
+                      form.setCopied(false);
+                      form.setCopiedBcc(false);
+                      form.setShowGuideModal(true);
+                    }}
                     copyToClipboard={form.copyToClipboard}
+                    showGuideModal={form.showGuideModal}
+                    setShowGuideModal={form.setShowGuideModal}
+                    copied={form.copied}
+                    copiedBcc={form.copiedBcc}
+                    onCopyBcc={() =>
+                      form.handleCopy(
+                        [
+                          ...form.currentMembers.map((member) => member.email),
+                          'response.skt.leak@gmail.com',
+                        ].join(','),
+                        'bcc',
+                      )
+                    }
+                    onCopyContent={() => form.handleCopy(form.content, 'content')}
+                    bccValue={[
+                      ...form.currentMembers.map((member) => member.email),
+                      'response.skt.leak@gmail.com',
+                    ].join(',')}
+                    contentValue={form.content}
                   />
                 </Suspense>
               </ErrorBoundary>
-              <EmailSendButtons
-                isMobile={form.isMobile}
-                getEmailUrl={form.getEmailUrl}
-                getMailtoUrl={form.getMailtoUrl}
-                onGuideClick={() => {
-                  form.setCopied(false);
-                  form.setCopiedBcc(false);
-                  form.setShowGuideModal(true);
-                }}
-              />
             </div>
           </CardContent>
         </Card>
-        <EmailGuideModal
-          open={form.showGuideModal}
-          onClose={() => form.setShowGuideModal(false)}
-          copied={form.copied}
-          copiedBcc={form.copiedBcc}
-          onCopyBcc={() =>
-            form.handleCopy(
-              [
-                ...form.currentMembers.map((member) => member.email),
-                'response.skt.leak@gmail.com',
-              ].join(','),
-              'bcc',
-            )
-          }
-          onCopyContent={() => form.handleCopy(form.content, 'content')}
-          bccValue={[
-            ...form.currentMembers.map((member) => member.email),
-            'response.skt.leak@gmail.com',
-          ].join(',')}
-          contentValue={form.content}
-        />
       </div>
     </div>
   );

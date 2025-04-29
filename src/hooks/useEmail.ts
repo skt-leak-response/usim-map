@@ -31,7 +31,22 @@ ${EMAIL_TEMPLATES[template].solution}
 
 ${EMAIL_TEMPLATES[template].finish}`;
     setContent(baseContent);
-  }, [template, senderName]);
+  }, [template]);
+
+  // 보내는 사람 이름이 변경될 때 content의 마지막 서명을 업데이트
+  useEffect(() => {
+    if (content) {
+      const lines = content.split('\n');
+      const lastLine = lines[lines.length - 1].trim();
+
+      // 마지막 줄이 "올림"으로 끝나는 경우에만 업데이트
+      if (lastLine.endsWith('올림')) {
+        const newSignature = senderName ? `${senderName} 올림` : '시민 올림';
+        lines[lines.length - 1] = newSignature;
+        setContent(lines.join('\n'));
+      }
+    }
+  }, [senderName]);
 
   const BATCH_SIZE = 50;
   const totalBatches = Math.ceil(selectedMembers.length / BATCH_SIZE);
@@ -64,6 +79,7 @@ ${EMAIL_TEMPLATES[template].finish}`;
       setLoadingAI(false);
     }
   };
+
   const getEmailUrl = (provider: string) => {
     const subject = `[${issue}]`;
     const body = content;

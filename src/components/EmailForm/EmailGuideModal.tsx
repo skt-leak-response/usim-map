@@ -30,6 +30,10 @@ export function EmailGuideModal({
         <p className="mb-2">
           Gmail 외의 메일 서비스(Outlook, 네이버 등)는 수신자 자동 입력이 지원되지 않습니다.
         </p>
+        <p className="mb-2 text-red-600">
+          일부 메일 서비스의 보안 정책으로 인해 자동 링크가 차단될 수 있습니다. 이 경우 아래 복사
+          버튼을 이용해 직접 붙여넣어 주세요.
+        </p>
         <p className="mb-2">아래 정보를 복사해 직접 붙여넣어 주세요.</p>
         <div className="mb-2">
           <span className="font-semibold">수신자:</span>

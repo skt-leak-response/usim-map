@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import { Member } from '@/types/members';
 import { MEMBER_CONSTANTS } from '@/constants/members';
+import { isMobile } from '@/lib/utils';
 import { encodeIds } from '@/utils/encoding';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -161,14 +162,14 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
         </Suspense>
       </ErrorBoundary>
 
-      <div className="flex justify-between gap-3">
+      <div className="flex justify-between md:gap-3 md:flex-row flex-col gap-5">
         <div>
           {selectedMembers.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {selectedMembers.map((member) => (
                 <span
                   key={member.id}
-                  className="inline-flex items-center bg-gradient-to-r from-fuchsia-600 to-blue-500 text-white hover:from-fuchsia-500 hover:to-blue-400 rounded-full px-2 py-1 text-sm gap-1"
+                  className="inline-flex items-center bg-gradient-to-r from-fuchsia-600 to-blue-500 text-white hover:from-fuchsia-500 hover:to-blue-400 rounded-full px-2 py-1 md:text-sm text-xs gap-1"
                 >
                   {member.name}
                   <button onClick={() => removeMember(member.id)}>×</button>
@@ -206,13 +207,13 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                   <Label className="text-gray-200">전체 선택</Label>
                 </div>
 
-                <div className="flex gap-1">
+                <div className="flex gap-1 items-end">
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => setCurrentPage(1)}
                     disabled={currentPage === 1}
-                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                    className="md:h-8 md:px-3 h-6 px-2 bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
                   >
                     {'<<'}
                   </Button>
@@ -221,7 +222,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                     size="sm"
                     onClick={() => setCurrentPage(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                    className="md:h-8 md:px-3 h-6 px-2 bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
                   >
                     {'<'}
                   </Button>
@@ -230,7 +231,7 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                     size="sm"
                     onClick={() => setCurrentPage(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                    className="md:h-8 md:px-3 h-6 px-2 bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
                   >
                     {'>'}
                   </Button>
@@ -239,16 +240,16 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                     size="sm"
                     onClick={() => setCurrentPage(totalPages)}
                     disabled={currentPage === totalPages}
-                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                    className="md:h-8 md:px-3 h-6 px-2 bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
                   >
                     {'>>'}
                   </Button>
                 </div>
-                <Label className="flex flex-col items-end space-y-1 text-white">
+                <Label className="flex flex-col items-end justify-end md:gap-1 text-white">
                   <div className="text-gray-400 w-full flex justify-end">
                     페이지 {currentPage} of {totalPages}
                   </div>
-                  <div>
+                  <div className="md:block hidden">
                     {(currentPage - 1) * ITEMS_PER_PAGE + 1} ~
                     {Math.min(currentPage * ITEMS_PER_PAGE, filteredMembers.length)}명 /
                     {filteredMembers.length}명

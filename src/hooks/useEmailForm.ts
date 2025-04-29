@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useEmail } from '@/hooks/useEmail';
-import { isMobile } from '@/lib/utils';
+import { isMobile, processEmailAddress } from '@/lib/utils';
 import { Member } from '@/types/members';
 
 export function useEmailForm(selectedMembers: Member[]) {
@@ -39,9 +39,15 @@ export function useEmailForm(selectedMembers: Member[]) {
   // 모바일용 mailto 링크 생성
   const getMailtoUrl = () => {
     const bccEmails = [
-      ...currentMembers.map((member) => member.email),
+      ...currentMembers.map((member) => {
+        const processedEmails = processEmailAddress(member.email || '');
+        return processedEmails[0]; // Take the first valid email
+      }),
       'response.skt.leak@gmail.com',
-    ].join(',');
+    ]
+      .filter(Boolean)
+      .join(',');
+
     return `mailto:?bcc=${encodeURIComponent(bccEmails)}&subject=${encodeURIComponent(
       issue,
     )}&body=${encodeURIComponent(content)}`;
@@ -50,7 +56,14 @@ export function useEmailForm(selectedMembers: Member[]) {
   // 복사 함수
   const handleCopy = async (text: string, type: 'bcc' | 'content') => {
     try {
-      await navigator.clipboard.writeText(text);
+      let formattedText = text;
+      if (type === 'bcc') {
+        // Process each email address
+        const emails = text.split(',');
+        const processedEmails = emails.flatMap((email) => processEmailAddress(email));
+        formattedText = processedEmails.join(', ');
+      }
+      await navigator.clipboard.writeText(formattedText);
       if (type === 'bcc') setCopiedBcc(true);
       else setCopied(true);
       setTimeout(() => {

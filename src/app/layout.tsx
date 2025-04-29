@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     maximumScale: 1,
   },
   verification: {
-    google: 'google-site-verification=F1RRiGC5yVFpf6GSGqqKuQBxJSm432KNrWh7Uv55F3Q',
+    google: 'F1RRiGC5yVFpf6GSGqqKuQBxJSm432KNrWh7Uv55F3Q',
     other: {
       'naver-site-verification': ['f03f287cfe308c862c6aeeddb9c727dbbd77e37a'],
     },

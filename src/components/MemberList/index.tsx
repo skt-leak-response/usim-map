@@ -173,20 +173,10 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
         <div className="text-center text-gray-400">No members found</div>
       ) : (
         <div className="space-y-2">
-          {totalPages > 1 && (
-            <MemberPagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          )}
-          <div className="text-gray-400 w-full flex justify-end px-4">
-            페이지 {currentPage} of {totalPages}
-          </div>
-          <Card className="bg-gray-900 border-gray-700">
-            <CardContent className="p-4">
+          <Card className="bg-gray-900 border-none">
+            <CardContent className="p-3">
               <div className="flex justify-between">
-                <div className="flex items-center space-x-2">
+                <div className="flex items-end space-x-2">
                   <Checkbox
                     checked={currentPageMembers.every((member) =>
                       selectedMembers.some((m) => m.id === member.id),
@@ -197,7 +187,48 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
                   <Label className="text-gray-200">전체 선택</Label>
                 </div>
 
+                <div className="flex gap-1">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setCurrentPage(1)}
+                    disabled={currentPage === 1}
+                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                  >
+                    {'<<'}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setCurrentPage(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                  >
+                    {'<'}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setCurrentPage(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                  >
+                    {'>'}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setCurrentPage(totalPages)}
+                    disabled={currentPage === totalPages}
+                    className="bg-gray-800 text-white border-gray-700 hover:bg-gray-800 hover:text-white"
+                  >
+                    {'>>'}
+                  </Button>
+                </div>
                 <Label className="flex flex-col items-end space-y-1 text-white">
+                  <div className="text-gray-400 w-full flex justify-end">
+                    페이지 {currentPage} of {totalPages}
+                  </div>
                   <div>
                     {(currentPage - 1) * ITEMS_PER_PAGE + 1} ~
                     {Math.min(currentPage * ITEMS_PER_PAGE, filteredMembers.length)}명 /
@@ -221,6 +252,13 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
             </Suspense>
           </ErrorBoundary>
         </div>
+      )}
+      {totalPages > 1 && (
+        <MemberPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       )}
     </div>
   );

@@ -28,7 +28,7 @@ export default function MemberPagination({
   }
 
   return (
-    <div className="flex justify-center items-center space-x-2 mt-4">
+    <div className="flex justify-center items-center space-x-2 my-4">
       <Button
         variant="outline"
         size="sm"

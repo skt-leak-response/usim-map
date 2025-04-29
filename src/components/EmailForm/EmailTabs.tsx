@@ -36,10 +36,14 @@ interface EmailTabsProps {
   setShowGuideModal: (show: boolean) => void;
   copied: boolean;
   copiedBcc: boolean;
+  copiedSubject: boolean;
   onCopyBcc: () => void;
   onCopyContent: () => void;
+  onCopySubject: () => void;
   bccValue: string;
   contentValue: string;
+  subjectValue: string;
+  currentMembers: Member[];
 }
 
 export function EmailTabs({
@@ -71,10 +75,14 @@ export function EmailTabs({
   setShowGuideModal,
   copied,
   copiedBcc,
+  copiedSubject,
   onCopyBcc,
   onCopyContent,
+  onCopySubject,
   bccValue,
   contentValue,
+  subjectValue,
+  currentMembers,
 }: EmailTabsProps) {
   return (
     <Tabs defaultValue="ai" className="w-full">
@@ -133,10 +141,13 @@ export function EmailTabs({
         onClose={() => setShowGuideModal(false)}
         copied={copied}
         copiedBcc={copiedBcc}
+        copiedSubject={copiedSubject}
         onCopyBcc={onCopyBcc}
         onCopyContent={onCopyContent}
+        onCopySubject={onCopySubject}
         bccValue={bccValue}
         contentValue={contentValue}
+        subjectValue={subjectValue}
       />
     </Tabs>
   );

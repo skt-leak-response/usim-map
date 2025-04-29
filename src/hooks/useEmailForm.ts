@@ -8,6 +8,7 @@ export function useEmailForm(selectedMembers: Member[]) {
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [copied, setCopied] = useState(false);
   const [copiedBcc, setCopiedBcc] = useState(false);
+  const [copiedSubject, setCopiedSubject] = useState(false);
 
   const {
     template,
@@ -54,7 +55,7 @@ export function useEmailForm(selectedMembers: Member[]) {
   };
 
   // 복사 함수
-  const handleCopy = async (text: string, type: 'bcc' | 'content') => {
+  const handleCopy = async (text: string, type: 'bcc' | 'content' | 'subject') => {
     try {
       let formattedText = text;
       if (type === 'bcc') {
@@ -65,10 +66,12 @@ export function useEmailForm(selectedMembers: Member[]) {
       }
       await navigator.clipboard.writeText(formattedText);
       if (type === 'bcc') setCopiedBcc(true);
+      else if (type === 'subject') setCopiedSubject(true);
       else setCopied(true);
       setTimeout(() => {
         setCopied(false);
         setCopiedBcc(false);
+        setCopiedSubject(false);
       }, 1500);
     } catch {}
   };
@@ -82,6 +85,8 @@ export function useEmailForm(selectedMembers: Member[]) {
     setCopied,
     copiedBcc,
     setCopiedBcc,
+    copiedSubject,
+    setCopiedSubject,
     issue,
     setIssue,
     content,

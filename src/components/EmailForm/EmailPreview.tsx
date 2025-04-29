@@ -37,9 +37,9 @@ export function EmailPreview({
     <div>
       <div className="flex justify-between items-center mb-2">
         <Label>미리보기</Label>
-        <Button variant="ghost" size="icon" onClick={() => copyToClipboard(getFormattedContent())}>
+        {/* <Button variant="ghost" size="icon" onClick={() => copyToClipboard(getFormattedContent())}>
           <Copy className="h-5 w-5" />
-        </Button>
+        </Button> */}
       </div>
       <Card>
         <CardContent className="p-4 whitespace-pre-wrap">

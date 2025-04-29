@@ -73,6 +73,7 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                     onGuideClick={() => {
                       form.setCopied(false);
                       form.setCopiedBcc(false);
+                      form.setCopiedSubject(false);
                       form.setShowGuideModal(true);
                     }}
                     copyToClipboard={form.copyToClipboard}
@@ -80,6 +81,7 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                     setShowGuideModal={form.setShowGuideModal}
                     copied={form.copied}
                     copiedBcc={form.copiedBcc}
+                    copiedSubject={form.copiedSubject}
                     onCopyBcc={() =>
                       form.handleCopy(
                         [
@@ -90,11 +92,14 @@ export default function EmailForm({ selectedMembers }: EmailFormProps) {
                       )
                     }
                     onCopyContent={() => form.handleCopy(form.content, 'content')}
+                    onCopySubject={() => form.handleCopy(form.issue, 'subject')}
                     bccValue={[
                       ...form.currentMembers.map((member) => member.email),
                       'response.skt.leak@gmail.com',
                     ].join(',')}
                     contentValue={form.content}
+                    subjectValue={form.issue}
+                    currentMembers={form.currentMembers}
                   />
                 </Suspense>
               </ErrorBoundary>

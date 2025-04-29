@@ -6,10 +6,13 @@ interface EmailGuideModalProps {
   onClose: () => void;
   copied: boolean;
   copiedBcc: boolean;
+  copiedSubject: boolean;
   onCopyBcc: () => void;
   onCopyContent: () => void;
+  onCopySubject: () => void;
   bccValue: string;
   contentValue: string;
+  subjectValue: string;
 }
 
 export function EmailGuideModal({
@@ -17,10 +20,13 @@ export function EmailGuideModal({
   onClose,
   copied,
   copiedBcc,
+  copiedSubject,
   onCopyBcc,
   onCopyContent,
+  onCopySubject,
   bccValue,
   contentValue,
+  subjectValue,
 }: EmailGuideModalProps) {
   if (!open) return null;
   return (
@@ -28,13 +34,14 @@ export function EmailGuideModal({
       <div className="bg-white rounded-lg p-6 max-w-md w-full text-gray-900">
         <h2 className="text-lg font-bold mb-2">다른 메일 서비스 이용 안내</h2>
         <p className="mb-2">
-          Gmail 외의 메일 서비스(Outlook, 네이버 등)는 수신자 자동 입력이 지원되지 않습니다.
+          일부 메일 서비스는 수신자 자동 입력이 지원되지 않습니다. 아래 정보를 복사해 직접 붙여넣어
+          주세요.
         </p>
-        <p className="mb-2 text-red-600">
+        {/* <p className="mb-2 text-red-600">
           일부 메일 서비스의 보안 정책으로 인해 자동 링크가 차단될 수 있습니다. 이 경우 아래 복사
           버튼을 이용해 직접 붙여넣어 주세요.
         </p>
-        <p className="mb-2">아래 정보를 복사해 직접 붙여넣어 주세요.</p>
+        <p className="mb-2">아래 정보를 복사해 직접 붙여넣어 주세요.</p> */}
         <div className="mb-2">
           <span className="font-semibold">수신자:</span>
           <button
@@ -47,6 +54,16 @@ export function EmailGuideModal({
           <p className="mt-1 text-sm text-gray-600">
             ※ 수신자 정보는 '숨은 참조(BCC)' 필드에 붙여넣어 주세요.
           </p>
+        </div>
+        <div className="mb-2">
+          <span className="font-semibold">제목:</span>
+          <button
+            className="ml-2 px-2 py-1 text-xs bg-gray-200 rounded hover:bg-gray-300"
+            onClick={onCopySubject}
+          >
+            복사
+          </button>
+          <span className="ml-2 text-green-600 text-xs">{copiedSubject && '복사됨!'}</span>
         </div>
         <div className="mb-2">
           <span className="font-semibold">본문:</span>

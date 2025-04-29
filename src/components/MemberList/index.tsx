@@ -89,6 +89,10 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
     onSelectionChange(selectedMembers);
   }, [selectedMembers, onSelectionChange]);
 
+  const removeMember = (id: Member['id']) => {
+    setSelectedMembers((prev) => prev.filter((m) => m.id !== id));
+  };
+
   const handleFilterChange = (key: keyof FilterState, value: string | null) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
@@ -157,7 +161,22 @@ export default function MemberList({ onSelectionChange }: MemberListProps) {
         </Suspense>
       </ErrorBoundary>
 
-      <div className="flex justify-end">
+      <div className="flex justify-between gap-3">
+        <div>
+          {selectedMembers.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {selectedMembers.map((member) => (
+                <span
+                  key={member.id}
+                  className="inline-flex items-center bg-gradient-to-r from-fuchsia-600 to-blue-500 text-white hover:from-fuchsia-500 hover:to-blue-400 rounded-full px-2 py-1 text-sm gap-1"
+                >
+                  {member.name}
+                  <button onClick={() => removeMember(member.id)}>×</button>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
         <Button
           onClick={handleNext}
           disabled={selectedMembers.length === 0}

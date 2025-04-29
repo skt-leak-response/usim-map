@@ -1,7 +1,6 @@
 import '@/styles/tailwind.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ReactNode } from 'react';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { Suspense } from 'react';
@@ -12,13 +11,30 @@ import { SiteConfig } from '@/constants/config';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: SiteConfig.title,
-  description: SiteConfig.url,
+  title: {
+    default: SiteConfig.title,
+    template: `%s | ${SiteConfig.title}`,
+  },
+  description: SiteConfig.subtitle,
+  keywords: [
+    'SKT',
+    '개인정보유출',
+    '국민행동',
+    '국회의원',
+    '항의메일',
+    '청원',
+    'USIM',
+    '보안',
+    '개인정보보호',
+  ],
   authors: [{ name: SiteConfig.author.name }],
   referrer: 'origin-when-cross-origin',
   creator: SiteConfig.author.name,
   publisher: SiteConfig.author.name,
   metadataBase: new URL(SiteConfig.url),
+  alternates: {
+    canonical: '/',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -45,17 +61,43 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: SiteConfig.url,
+    title: SiteConfig.title,
+    description: SiteConfig.subtitle,
+    siteName: SiteConfig.title,
     images: [
       {
         url: '/og_image_1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'OG Image',
+        alt: SiteConfig.title,
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SiteConfig.title,
+    description: SiteConfig.subtitle,
+    images: ['/og_image_1200x630.png'],
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  verification: {
+    google: 'google-site-verification=F1RRiGC5yVFpf6GSGqqKuQBxJSm432KNrWh7Uv55F3Q',
+    other: {
+      'naver-site-verification': ['f03f287cfe308c862c6aeeddb9c727dbbd77e37a'],
+    },
   },
 };
 

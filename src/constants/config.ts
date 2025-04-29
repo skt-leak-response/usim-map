@@ -1,6 +1,6 @@
 // Config file for your website
 export const SiteConfig = {
-  url: 'https://mail-to-rep.vercel.app',
+  url: 'https://action.sktleakresponse.online',
   pathPrefix: '/',
   title: 'SKT 개인정보 유출 사건 국민행동',
   subtitle: '국회의원들에게 항의 메일을 보내는 플랫폼',

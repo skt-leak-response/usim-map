@@ -44,6 +44,9 @@ export function EmailGuideModal({
             복사
           </button>
           <span className="ml-2 text-green-600 text-xs">{copiedBcc && '복사됨!'}</span>
+          <p className="mt-1 text-sm text-gray-600">
+            ※ 수신자 정보는 '숨은 참조(BCC)' 필드에 붙여넣어 주세요.
+          </p>
         </div>
         <div className="mb-2">
           <span className="font-semibold">본문:</span>
